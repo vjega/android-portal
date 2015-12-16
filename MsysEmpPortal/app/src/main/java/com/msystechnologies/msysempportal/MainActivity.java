@@ -3,6 +3,8 @@ package com.msystechnologies.msysempportal;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +17,8 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    FragmentManager fragmentManager =getSupportFragmentManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
     @Override
@@ -82,20 +88,41 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_dashboard) {
             setTitle("Dashboard");
+            Dashboard dashboard =new Dashboard();
+//            Initilaize fragments for each menu
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,dashboard);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_home) {
             setTitle("Home");
+            Home home =new Home();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,home);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_leave_Management) {
             setTitle("Leave Management");
+            Leave leave =new Leave();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,leave);
+            fragmentTransaction.commit();
+
 
         } else if (id == R.id.nav_infrastructure) {
             setTitle("Infrastructure");
+            Infrastructure infrastructure =new Infrastructure();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,infrastructure);
+            fragmentTransaction.commit();
+
 
         } else if (id == R.id.nav_others) {
             setTitle("Others");
-
-
+            Others others =new Others();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,others);
+            fragmentTransaction.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

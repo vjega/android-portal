@@ -31,4 +31,15 @@
     <string name="nav_leave_management">Leave Management</string>
     <string name="nav_infrastructure">Infrastructure</string>
     <string name="nav_others">Others</string>
+
+
+    <!--Fragment Pages-->
+    <string name="dashboard_fragment">Dashboard Fragment</string>
+    <string name="home">Home Fragment</string>
+    <string name="leave_fragement">Leave Fragement</string>
+    <string name="infrastructure_fragement">Infrastructure Fragement</string>
+    <string name="others_fragement">Others Fragement</string>
+
+
+
 </resources>
