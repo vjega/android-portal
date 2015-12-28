@@ -13,7 +13,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">Dashboard</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -26,20 +26,79 @@
 
 
     <!--Nav Items-->
-    <string name="nav_dashboard">Dashboard</string>
-    <string name="nav_home">Home</string>
-    <string name="nav_leave_management">Leave Management</string>
-    <string name="nav_infrastructure">Infrastructure</string>
-    <string name="nav_others">Others</string>
+    <!--<string name="nav_dashboard">Dashboard</string>-->
+
+    <!--Expandable Nav items-->
+    <string-array name="menu_titles">
+        <item>Dashboard</item>
+        <item>Home</item>
+        <item>Leave Management</item>
+        <item>Infrastructure</item>
+        <item>Others</item>
+    </string-array>
+
+    <!--Groups with schild items-->
+    <string-array name="Home_sub">
+        <item>Profile</item>
+        <item>Documents</item>
+        <item>Qualifications</item>
+        <item>Family Details</item>
+        <item>Experience</item>
+        <item>Visa</item>
+        <item>Projects</item>
+        <item>Team Members</item>
+        <item>Skillset</item>
+    </string-array>
+
+    <string-array name="Leave_sub">
+        <item>Apply leave</item>
+        <item>Leave History</item>
+        <item>Team Leaves</item>
+    </string-array>
+
+    <string-array name="Infrastructure_sub">
+        <item>IT Tickets</item>
+        <item>HR Tickets</item>
+        <item>Interview Details</item>
+        <item>Interview History</item>
+        <item>Circulars</item>
+        <item>Resource</item>
+    </string-array>
+
+    <string-array name="Others_sub">
+        <item>Events News</item>
+        <item>Openings</item>
+        <item>Bug Report</item>
+    </string-array>
 
 
-    <!--Fragment Pages-->
-    <string name="dashboard_fragment">Dashboard Fragment</string>
-    <string name="home">Home Fragment</string>
-    <string name="leave_fragement">Leave Fragement</string>
-    <string name="infrastructure_fragement">Infrastructure Fragement</string>
-    <string name="others_fragement">Others Fragement</string>
 
+    <string name="dashboard">Dashboard</string>
+    <string name="profile">Profile</string>
+    <string name="qualifications">qualifications</string>
+    <string name="projects">Projects</string>
+    <string name="visa">Visa</string>
+    <string name="team">Team</string>
+    <string name="skillset">Skillset</string>
+
+    <string name="apply_leave">Apply Leave</string>
+    <string name="leave_history">Leave History</string>
+    <string name="team_leaves">Team Leaves</string>
+    <string name="it_tickets">IT Tickets</string>
+    <string name="hr_tickets">Hr Tickets</string>
+    <string name="interview_details">Interview Details</string>
+    <string name="interview_history">Interview History</string>
+    <string name="circulars">Circulars</string>
+    <string name="events">Events</string>
+
+    <string name="openings">Openings</string>
+    <string name="bug_reports">Bug Reports</string>
+    <string name="settings">Settings</string>
+
+
+    <string name="pravinth_raja_k">pravinth_raja_k</string>
+    <string name="pravinthraja_msystechnologies_com">pravinthraja_msystechnologies_com</string>
+    <string name="upload_docs">Upload Docs</string>
 
 
 </resources>

@@ -32,6 +32,93 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <!-- Activity for Group -->
+        <activity
+            android:name=".Dashboard"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Activity for Profile group -->
+        <activity
+            android:name=".Profile"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Documents"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Qualifications"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Family"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Experience"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Visa"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Projects"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Team"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Skillset"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Activity for Leave group -->
+
+        <activity
+            android:name=".ApplyLeave"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".LeaveHistory"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".TeamLeaves"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Activity for Infrastructure group -->
+
+        <activity
+            android:name=".ItTickets"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".HrTickets"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".InterviewDetails"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".InterviewHistory"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Circulars"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Resource"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Activity for Others group -->
+
+        <activity
+            android:name=".Events"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Openings"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Bug"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+
+        <!--Settings for optionmenu itemselected-->
+        <activity android:name=".Settings"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
     </application>
 
 </manifest>

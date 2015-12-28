@@ -5,26 +5,10 @@
         <!--<item-->
         <!--android:id="@+id/nav_camera"-->
         <!--android:icon="@drawable/ic_menu_camera"-->
-        <!--android:title="Dashboard" />-->
-        <item
-            android:id="@+id/nav_dashboard"
-            android:title="@string/nav_dashboard" />
-
-        <item
-            android:id="@+id/nav_home"
-
-            android:title="@string/nav_home" />
-        <item
-            android:id="@+id/nav_leave_Management"
-
-            android:title="@string/nav_leave_management" />
-        <item
-            android:id="@+id/nav_infrastructure"
-            android:title="@string/nav_infrastructure" />
-        <item
-            android:id="@+id/nav_others"
-
-            android:title="@string/nav_others" />
+        <!--android:title="Dashboard_1" />-->
+        <!--<item-->
+            <!--android:id="@+id/nav_dashboard"-->
+            <!--android:title="@string/nav_dashboard" />-->
     </group>
 
 
