@@ -100,11 +100,6 @@ public class MainActivity extends AppCompatActivity
 
         expandableListView.setAdapter(listAdapter);
 
-//        Drawable indicator = context.getResources().getDrawable(R.drawable.group_indicator);
-//        expandableListView.setGroupIndicator(indicator);
-//        expandableListView.setIndicatorBounds(expandableListView.getPaddingLeft(), expandableListView.getPaddingLeft()+indicator.getIntrinsicWidth());
-
-
 
         /*Set activity for groups*/
         expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
@@ -156,14 +151,18 @@ public class MainActivity extends AppCompatActivity
                             startActivity(exp_intent);
                             break;
                         case 5:
+                            Intent visa_intent = new Intent(MainActivity.this, Visa.class);
+                            startActivity(visa_intent);
+                            break;
+                        case 6:
                             Intent projects_intent = new Intent(MainActivity.this, Projects.class);
                             startActivity(projects_intent);
                             break;
-                        case 6:
+                        case 7:
                             Intent team_intent = new Intent(MainActivity.this, Team.class);
                             startActivity(team_intent);
                             break;
-                        case 7:
+                        case 8:
                             Intent skill_intent = new Intent(MainActivity.this, Skillset.class);
                             startActivity(skill_intent);
                             break;

@@ -7,16 +7,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 
-public class Team extends MainActivity {
+public class Holiday extends MainActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_team);
+//        setContentView(R.layout.activity_holiday);
         LayoutInflater inflater = (LayoutInflater) this
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View contentView = inflater.inflate(R.layout.activity_team, null, false);
+        View contentView = inflater.inflate(R.layout.activity_holiday, null, false);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.addView(contentView, 0);
     }
+
 }

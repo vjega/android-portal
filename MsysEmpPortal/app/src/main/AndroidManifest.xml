@@ -36,87 +36,118 @@
         <!-- Activity for Group -->
         <activity
             android:name=".Dashboard"
-            android:parentActivityName=".MainActivity" />
+            android:label="Dashboard"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <!-- Activity for Profile group -->
         <activity
             android:name=".Profile"
-            android:parentActivityName=".MainActivity" />
+            android:label="Profile"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Documents"
-            android:parentActivityName=".MainActivity" />
+            android:label="Documents"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Qualifications"
-            android:parentActivityName=".MainActivity" />
+            android:label="Qualifications"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Family"
-            android:parentActivityName=".MainActivity" />
+            android:label="Family"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Experience"
-            android:parentActivityName=".MainActivity" />
+            android:label="Experience"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Visa"
-            android:parentActivityName=".MainActivity" />
+            android:label="Visa"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Projects"
-            android:parentActivityName=".MainActivity" />
+            android:label="Projects"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Team"
-            android:parentActivityName=".MainActivity" />
+            android:label="Team"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Skillset"
-            android:parentActivityName=".MainActivity" />
+            android:label="Skillset"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <!-- Activity for Leave group -->
 
         <activity
             android:name=".ApplyLeave"
-            android:parentActivityName=".MainActivity" />
+            android:label="ApplyLeave"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LeaveHistory"
-            android:parentActivityName=".MainActivity" />
+            android:label="LeaveHistory"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".TeamLeaves"
-            android:parentActivityName=".MainActivity" />
+            android:label="TeamLeaves"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <!-- Activity for Infrastructure group -->
 
         <activity
             android:name=".ItTickets"
-            android:parentActivityName=".MainActivity" />
+            android:label="ItTickets"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".HrTickets"
-            android:parentActivityName=".MainActivity" />
+            android:label="HrTickets"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".InterviewDetails"
-            android:parentActivityName=".MainActivity" />
+            android:label="InterviewDetails"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".InterviewHistory"
-            android:parentActivityName=".MainActivity" />
+            android:label="InterviewHistory"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Circulars"
-            android:parentActivityName=".MainActivity" />
+            android:label="Circulars"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Resource"
-            android:parentActivityName=".MainActivity" />
+            android:label="Resource"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <!-- Activity for Others group -->
 
         <activity
             android:name=".Events"
-            android:parentActivityName=".MainActivity" />
+            android:label="Events"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Openings"
-            android:parentActivityName=".MainActivity" />
+            android:label="Openings"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Bug"
-            android:parentActivityName=".MainActivity">
+            android:label="Bug"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!-- Settings for optionmenu itemselected -->
+        <activity
+            android:name=".Settings"
+            android:label="Settings"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Birthday"
+            android:label="Birthday"
+            android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
-
-        <!--Settings for optionmenu itemselected-->
-        <activity android:name=".Settings"
-            android:parentActivityName=".MainActivity">
+        <activity android:name=".Holiday"
+            android:label="Holiday"
+            android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
     </application>

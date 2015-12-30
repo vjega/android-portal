@@ -304,7 +304,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         UserLoginTask(String email, String password) {
             mEmail = email;
             mPassword = password;
-            System.out.println("88888888888888user email"+mEmail+"**************************"+mPassword);
         }
 
         @Override
@@ -337,7 +336,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             if (success) {
 //                finish();
-                Intent intent = new Intent("com.msystechnologies.msysempportal.MainActivity");
+                Intent intent = new Intent(LoginActivity.this,Dashboard.class);
                 startActivity(intent);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));

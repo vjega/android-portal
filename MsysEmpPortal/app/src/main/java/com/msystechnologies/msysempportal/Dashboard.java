@@ -1,32 +1,56 @@
 package com.msystechnologies.msysempportal;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ActionMode;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import it.gmariotti.cardslib.library.internal.Card;
 import it.gmariotti.cardslib.library.internal.CardArrayAdapter;
+import it.gmariotti.cardslib.library.internal.CardGridArrayAdapter;
+import it.gmariotti.cardslib.library.internal.CardGridArrayMultiChoiceAdapter;
 import it.gmariotti.cardslib.library.internal.CardHeader;
 import it.gmariotti.cardslib.library.internal.CardThumbnail;
 import it.gmariotti.cardslib.library.view.CardGridView;
 import it.gmariotti.cardslib.library.view.CardListView;
+import it.gmariotti.cardslib.library.view.CardView;
 
 
-public class Dashboard extends AppCompatActivity {
+public class Dashboard extends MainActivity {
+    private Context context;
 
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
+//        setContentView(R.layout.activity_dashboard);
 
-        String[] dashboard_items = new String[]{"Uploaded Docs", "Current Projects", "Leave Applied", "Leaves For Approval"};
+        //set navigation drawer
+        LayoutInflater inflater = (LayoutInflater) this
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View contentView = inflater.inflate(R.layout.activity_dashboard, null, false);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.addView(contentView, 0);
+
+        //get the id of gridview
+        CardGridView gridView = (CardGridView) this.findViewById(R.id.cardGridMenu);
+
+        String[] dashboard_items = new String[]{"Uploaded Docs", "Current Projects", "Leave Applied", "Circulars","Birthdays","Holidays"};
 
         int listImages[] = new int[]{R.drawable.angry_1, R.drawable.angry_2,
-                R.drawable.angry_3, R.drawable.angry_4};
+                R.drawable.angry_3, R.drawable.angry_4,R.drawable.gift,R.drawable.calendar};
 
         ArrayList<Card> cards = new ArrayList<Card>();
 
@@ -46,18 +70,72 @@ public class Dashboard extends AppCompatActivity {
             cards.add(card);
         }
 
-//        CardArrayAdapter mCardArrayAdapter = new CardArrayAdapter(this, cards)
-//        CardGridView cardGridView = (CardGridView) this.findViewById(R.id.myList);
+            CardGridArrayMultiChoiceAdapter cardGridArrayMultiChoiceAdapter = new CardGridArrayMultiChoiceAdapter(this, cards) {
+            @Override
+            public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked, CardView cardView, Card card) {
 
-        MyCardArrayMultiChoiceAdapter myCardArrayMultiChoiceAdapter =new MyCardArrayMultiChoiceAdapter(this,cards);
+            }
 
-        CardListView cardListView = (CardListView) this.findViewById(R.id.myList);
+            @Override
+            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+                return false;
+            }
 
-        if (cardListView != null) {
-            cardListView.setAdapter(myCardArrayMultiChoiceAdapter);
+            @Override
+            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+                return false;
+            }
+
+            public Card getItem(final int position){
+                Card card = super.getItem(position);
+                card.setOnClickListener(new Card.OnCardClickListener() {
+                    @Override
+                    public void onClick(Card card, View view) {
+                        switch(position){
+                            case 0:
+                                Intent doc_intent = new Intent(Dashboard.this, Documents.class);
+                                startActivity(doc_intent);
+                                break;
+                            case 1:
+                                Intent projects_intent = new Intent(Dashboard.this, Projects.class);
+                                startActivity(projects_intent);
+                                break;
+                            case 2:
+                                Intent leave_history_intent = new Intent(Dashboard.this, LeaveHistory.class);
+                                startActivity(leave_history_intent);
+                                break;
+                            case 3:
+                                Intent circular_intent = new Intent(Dashboard.this, Circulars.class);
+                                startActivity(circular_intent);
+                                break;
+                            case 4:
+                                Intent birthday_intent = new Intent(Dashboard.this, Birthday.class);
+                                startActivity(birthday_intent);
+                                break;
+                            case 5:
+                                Intent holiday_intent = new Intent(Dashboard.this, Holiday.class);
+                                startActivity(holiday_intent);
+                                break;
+
+
+                        }
+                        Toast.makeText(getContext(), "Document clicked" , Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+                    return card;
+                }
+
+        };
+
+        if (gridView!=null){
+            gridView.setAdapter(cardGridArrayMultiChoiceAdapter);
 
         }
 
 
     }
+
+
+
 }
