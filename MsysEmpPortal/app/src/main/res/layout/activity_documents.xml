@@ -9,13 +9,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.msystechnologies.msysempportal.Documents">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ListView
+        android:id="@+id/document_list"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Documents"
-        android:id="@+id/nav_documents"
-        android:layout_marginTop="118dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginTop="60dp">
+    </ListView>
+
 </RelativeLayout>

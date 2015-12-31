@@ -24,8 +24,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity {
 
     private Context context;
     private  NavigationView navigationView;
@@ -133,6 +132,7 @@ public class MainActivity extends AppCompatActivity
                         case 0:
                             Intent home_intent = new Intent(MainActivity.this, Profile.class);
                             startActivity(home_intent);
+
                             break;
                         case 1:
                             Intent doc_intent = new Intent(MainActivity.this, Documents.class);
@@ -247,11 +247,6 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-
     }
 
     @Override
@@ -304,26 +299,5 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
 
-//        if (id == R.id.nav_dashboard) {
-//            setTitle("Dashboard_1");
-//            Dashboard_1 dashboard =new Dashboard_1();
-//
-////            Initilaize fragments for each menu
-//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//            fragmentTransaction.replace(R.id.fragment_container,dashboard);
-//            fragmentTransaction.commit();
-//
-//        }
-
-
-//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 }

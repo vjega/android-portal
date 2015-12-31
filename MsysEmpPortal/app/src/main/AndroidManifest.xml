@@ -139,15 +139,22 @@
             android:name=".Settings"
             android:label="Settings"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".Birthday"
             android:label="Birthday"
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
-        <activity android:name=".Holiday"
+        <activity
+            android:name=".Holiday"
             android:label="Holiday"
             android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".Card_Document"
+            android:label="Document Details">
 
         </activity>
     </application>
