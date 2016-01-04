@@ -105,6 +105,25 @@
     <string name="select_file">Browse</string>
     <string name="remarks">Remarks</string>
     <string name="save">Save</string>
+    <string name="document_type">Document Type</string>
+
+
+    <string-array name="document_type_array">
+        <item>Select Document type</item>
+        <item>RESUME</item>
+        <item>SSLC MARKSHEET</item>
+        <item>HSC MARKSHEET</item>
+        <item>UG MARKSHEET</item>
+        <item>UG PROVISIONAL</item>
+        <item>OFFER LETTER</item>
+        <item>RELEVING LETTERS</item>
+        <item>PAYSLIPS</item>
+        <item>VOTER ID</item>
+        <item>PAN CARD</item>
+        <item>DRIVING LICENSE</item>
+        <item>FORM 16</item>
+
+    </string-array>
 
     <string-array name="document_course_array">
         <item>Select Course type</item>
@@ -116,6 +135,11 @@
         <item>Select type</item>
         <item>Photo copy</item>
         <item>original</item>
+    </string-array>
+
+    <string-array name="document_listview_click">
+        <item>Edit</item>
+        <item>Delete</item>
     </string-array>
 
 </resources>

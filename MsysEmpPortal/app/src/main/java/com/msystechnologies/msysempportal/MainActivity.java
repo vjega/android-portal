@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        fab.hide();
 
             /*get the headers and subitems from string array*/
         final List<String> Headings=new ArrayList<String>();

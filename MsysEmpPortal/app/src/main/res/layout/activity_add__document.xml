@@ -12,29 +12,48 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context="com.msystechnologies.msysempportal.Card_Document">
+        tools:context=".Add_Document">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/course"
-                android:id="@+id/document_course"
-                android:layout_alignTop="@+id/course_spinner"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/document_type"
+            android:id="@+id/document_type"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="51dp" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/document_type_spinner"
+            android:layout_alignTop="@+id/document_type"
+            android:layout_alignLeft="@+id/course_spinner"
+            android:layout_alignStart="@+id/course_spinner" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/course"
+            android:id="@+id/document_course"
+            android:layout_alignTop="@+id/course_spinner"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
 
         <Spinner
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/course_spinner"
-            android:layout_marginTop="53dp"
-            android:layout_marginLeft="71dp"
-            android:layout_marginStart="71dp"
-            android:layout_toRightOf="@+id/document_submitted"
-            android:layout_toEndOf="@+id/document_submitted"
-         />
+            android:layout_marginTop="147dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/submitted_spinner"
+            android:layout_alignStart="@+id/submitted_spinner" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,8 +71,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/submitted_spinner"
             android:layout_alignTop="@+id/document_submitted"
-            android:layout_alignLeft="@+id/course_spinner"
-            android:layout_alignStart="@+id/course_spinner" />
+            android:layout_alignLeft="@+id/document_select_button"
+            android:layout_alignStart="@+id/document_select_button" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -72,9 +91,11 @@
             android:layout_height="wrap_content"
             android:text="@string/select_file"
             android:id="@+id/document_select_button"
+            android:layout_marginLeft="69dp"
+            android:layout_marginStart="69dp"
             android:layout_alignTop="@+id/document_select_file"
-            android:layout_alignLeft="@+id/submitted_spinner"
-            android:layout_alignStart="@+id/submitted_spinner" />
+            android:layout_toRightOf="@+id/document_type"
+            android:layout_toEndOf="@+id/document_type" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -82,19 +103,8 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/remarks"
             android:id="@+id/textView"
-            android:layout_marginTop="73dp"
+            android:layout_marginTop="28dp"
             android:layout_below="@+id/document_select_button"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textImeMultiLine"
-            android:id="@+id/editText"
-            android:layout_below="@+id/textView"
-            android:layout_alignRight="@+id/submitted_spinner"
-            android:layout_alignEnd="@+id/submitted_spinner"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
@@ -103,20 +113,20 @@
             android:layout_height="wrap_content"
             android:text="@string/save"
             android:id="@+id/document_save_button"
-            android:layout_marginTop="42dp"
-            android:layout_below="@+id/editText"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editText2"
-            android:layout_below="@+id/document_select_button"
+            android:id="@+id/editText"
+            android:layout_below="@+id/textView"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignRight="@+id/editText"
-            android:layout_alignEnd="@+id/editText" />
+            android:layout_alignRight="@+id/document_save_button"
+            android:layout_alignEnd="@+id/document_save_button" />
+
 
     </RelativeLayout>
 </ScrollView>

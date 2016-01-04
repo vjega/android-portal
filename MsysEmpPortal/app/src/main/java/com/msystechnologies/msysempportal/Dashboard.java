@@ -49,8 +49,9 @@ public class Dashboard extends MainActivity {
 
         String[] dashboard_items = new String[]{"Uploaded Docs", "Current Projects", "Leave Applied", "Circulars","Birthdays","Holidays"};
 
-        int listImages[] = new int[]{R.drawable.angry_1, R.drawable.angry_2,
-                R.drawable.angry_3, R.drawable.angry_4,R.drawable.gift,R.drawable.calendar};
+        int listImages[] = new int[]{R.drawable.upload,
+                R.drawable.project,
+                R.drawable.leave, R.drawable.circular,R.drawable.gift,R.drawable.calendar};
 
         ArrayList<Card> cards = new ArrayList<Card>();
 
