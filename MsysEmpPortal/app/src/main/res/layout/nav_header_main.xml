@@ -48,4 +48,32 @@
         android:layout_alignStart="@+id/username"
         />
 
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="170dp"
+        android:id="@+id/action_edit"
+        android:onClick="profileClick"
+        android:src="@drawable/ic_mode_edit_white_24dp" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="220dp"
+        android:id="@+id/action_settings"
+        android:onClick="settingsClick"
+        android:src="@drawable/ic_settings_white_24dp" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="270dp"
+        android:id="@+id/action_logout"
+        android:onClick="logoutClick"
+        android:src="@drawable/ic_exit_to_app_white_24dp" />
+
 </RelativeLayout>

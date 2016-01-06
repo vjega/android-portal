@@ -1,0 +1,23 @@
+<de.hdodenhof.circleimageview.CircleImageView
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:id="@+id/profile_image"
+android:layout_width="70dp"
+android:layout_height="70dp"
+android:src="@drawable/profile"
+app:border_color="#FF000000"
+android:layout_marginLeft="24dp"
+android:layout_centerVertical="true"
+android:layout_alignParentLeft="true"
+android:layout_alignParentStart="true"
+android:layout_marginStart="24dp" />
+
+<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        anroid:text="Comp.Sci. Tutorials"
+        android:testSize="14sp"
+        android:textColor="#FFF"
+        
+        android:paddingBottom="4dp"
+        android:text="Android Studio"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />

@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -48,6 +50,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         fab.hide();
+
+        ImageView profile_img = (ImageView)findViewById(R.id.action_edit) ;
+//        profile_img.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                System.out.println("called");
+////                Intent edit_intent = new Intent(MainActivity.this,Profile.class);
+////                startActivity(edit_intent);
+//            }
+//        });
+
+
 
             /*get the headers and subitems from string array*/
         final List<String> Headings=new ArrayList<String>();
@@ -235,12 +249,14 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 }
+
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
                 return false;
             }
 
         });
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -298,6 +314,21 @@ public class MainActivity extends AppCompatActivity {
 
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void profileClick(View v){
+        Intent home_intent = new Intent(this, Profile.class);
+        startActivity(home_intent);
+    }
+
+    public void settingsClick(View v){
+        Intent settings_intent = new Intent(this, Settings.class);
+        startActivity(settings_intent);
+    }
+
+    public void logoutClick(View v){
+        Intent logout_intent = new Intent(this, LoginActivity.class);
+        startActivity(logout_intent);
     }
 
 
