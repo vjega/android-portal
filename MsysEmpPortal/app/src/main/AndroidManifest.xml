@@ -9,9 +9,9 @@
 
     <application
         android:allowBackup="true"
-        android:launchMode = "singleInstance"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:launchMode="singleInstance"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -40,11 +40,17 @@
             android:label="Dashboard"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <!-- Activity for Profile group -->
+        <!-- Activity for home group -->
         <activity
             android:name=".Profile"
             android:label="Profile"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".Settings"
+            android:label="Settings"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".Documents"
             android:label="Documents"
@@ -137,27 +143,24 @@
 
         <!-- Settings for optionmenu itemselected -->
         <activity
-            android:name=".Settings"
-            android:label="Settings"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity
             android:name=".Birthday"
             android:label="Birthday"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Holiday"
             android:label="Holiday"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Add_Document"
-            android:label="Document Details">
+            android:label="Document Details" />
+        <activity android:name=".Add_qualifications" />
+        <activity android:name=".Add_Experience" />
+        <activity android:name=".Add_Family" />
+        <activity android:name=".Add_Projects" />
+        <activity android:name=".Add_Visa" />
+        <activity android:name=".Add_Resource" />
+        <activity android:name=".Add_Skillset" />
 
-        </activity>
     </application>
 
 </manifest>

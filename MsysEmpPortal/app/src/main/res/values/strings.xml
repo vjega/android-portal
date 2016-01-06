@@ -56,6 +56,58 @@
     <string name="action_profile_cancel">Cancel</string>
 
 
+    <!-- Strings related to Qualification page -->
+    <string name="prompt_course_type">Course Type</string>
+    <string name="prompt_board_name">Board Name</string>
+    <string name="prompt_course_name">Course Name</string>
+    <string name="prompt_qual_passing_year">Passing Year</string>
+    <string name="prompt_grade">Grade</string>
+    <string name="prompt_total_mark">Total Mark</string>
+    <string name="prompt_earned_mark">Earned Mark</string>
+    <string name="prompt_percentage">Percentage</string>
+    <string name="prompt_qual_remarks">Remarks</string>
+
+    <!-- Strings related to add family detail page -->
+    <string name="prompt_person_name">Name</string>
+    <string name="prompt_relationship">Relationship</string>
+    <string name="prompt_person_date_of_birth">Date Of Birth</string>
+    <string name="prompt_age">Age</string>
+    <string name="prompt_employment">Employment</string>
+    <string name="prompt_phone_no">Phone No</string>
+    <string name="prompt_family_remarks">Remarks</string>
+
+    <!-- Strings related to add experience detail page -->
+    <string name="promt_company_name">Company Name</string>
+    <string name="promt_designation">Designation</string>
+    <string name="promt_role">Role</string>
+    <string name="promt_team_size">Team Size</string>
+    <string name="promt_ctc">CTC</string>
+    <string name="promt_joining_date">Joining Date</string>
+    <string name="promt_leaving_date">Leaving Date</string>
+    <string name="promt_total_experience">Total Experience</string>
+    <string name="promt_exp_remarks">Remarks</string>
+
+
+    <!-- Strings related to add visa detail page -->
+    <string name="prompt_type">Type</string>
+    <string name="prompt_country">Country</string>
+    <string name="prompt_visa_start_date">Start Date</string>
+    <string name="prompt_expired_date">Expired Date</string>
+    <string name="prompt_visa_remarks">Remarks</string>
+
+    <!-- Strings related to add project detail page -->
+    <string name="prompt_project">Project</string>
+    <string name="prompt_project_name">Project Name</string>
+    <string name="prompt_pro_start_date">Start Date</string>
+    <string name="prompt_end_date">End Date</string>
+    <string name="prompt_reporting_to">Reporting To</string>
+    <string name="prompt_pro_remarks">Remarks</string>
+
+    <!-- Strings related to add skillset detail page -->
+    <string name="prompt_skillset">Skillset</string>
+    <string name="prompt_experience">Experience</string>
+    <string name="prompt_last_used">Last Used</string>
+
     <!-- Strings related to settings page -->
     <string name="prompt_old_password">Old Password</string>
     <string name="prompt_new_password">New Password</string>

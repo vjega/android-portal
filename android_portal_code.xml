@@ -1,0 +1,161 @@
+employee_id
+name
+middle_name
+surname
+father_name
+date_of_birth
+blood_group
+qualification
+date_of_joining
+department
+msys_email
+tel_no
+pan_number
+emergency_contact_name
+primary_contact_name
+secondary_contact_name
+uan_number
+temporary_address
+temporary_city
+permanent_address
+permanent_city
+marital_status
+mother_name
+religion
+gender
+passing_year
+designation
+client_name
+personal_email
+mobile
+passport_no
+emergency_contact_phone
+primary_contact_phone
+secondary_contact_phone
+pf_number
+temporary_state
+permanent_state
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<string name="prompt_employee_id">Employee ID</string>
+    <string name="prompt_name">Name</string>
+    <string name="prompt_middle_name">Middle Name</string>
+    <string name="prompt_surname">Surname</string>
+    <string name="prompt_father_name">Father Name</string>
+    <string name="prompt_date_of_birth">Date of Birth</string>
+    <string name="prompt_blood_group">Blood Group</string>
+    <string name="prompt_qualification">Qualification</string>
+    <string name="prompt_date_of_joining">Date of Joining</string>
+    <string name="prompt_department">Department</string>
+    <string name="prompt_msys_email">Msys Email</string>
+    <string name="prompt_tel_no">Tel No</string>
+    <string name="prompt_pan_number">Pan Number</string>
+    <string name="prompt_emergency_contact_name">Emergency Contact Name</string>
+    <string name="prompt_primary_contact_name">Primary Contact Name</string>
+    <string name="prompt_secondary_contact_name">Secondary Contact Name</string>
+    <string name="prompt_uan_number">UAN Number</string>
+    <string name="prompt_temporary_address">Temporary Address</string>
+    <string name="prompt_temporary_city">Temporary City</string>
+    <string name="prompt_permanent_address">Permanent Address</string>
+    <string name="prompt_permanent_city">Permanent City</string>
+    <string name="prompt_marital_status">Marital Status</string>
+    <string name="prompt_mother_name">Mother Name</string>
+    <string name="prompt_religion">Religion</string>
+    <string name="prompt_gender">Gender</string>
+    <string name="prompt_passing_year">Passing Year</string>
+    <string name="prompt_designation">Designation</string>
+    <string name="prompt_client_name">Client Name</string>
+    <string name="prompt_personal_email">Personal Email</string>
+    <string name="prompt_mobile">Mobile</string>
+    <string name="prompt_passport_no">Passport No</string>
+    <string name="prompt_emergency_contact_phone">Emergency Contact Phone</string>
+    <string name="prompt_primary_contact_phone">Primary Contact Phone</string>
+    <string name="prompt_secondary_contact_phone">Secondary Contact Phone</string>
+    <string name="prompt_pf_number">PF Number</string>
+    <string name="prompt_temporary_state">Temporary State</string>
+
+
+
+
+???????Add New Qualification
+
+
+		prompt_course_type
+		prompt_board_name
+		prompt_course_name
+		prompt_passing_year
+		prompt_grade
+		prompt_total_mark
+		prompt_earned_mark
+		prompt_percentage
+		prompt_remarks
+
+
+ 	<string name="prompt_course_type">Course Type</string>
+    <string name="prompt_board_name">Board Name</string>
+    <string name="prompt_course_name">Course Name</string>
+    <string name="prompt_passing_year">Passing Year</string>
+    <string name="prompt_grade">Grade</string>
+    <string name="prompt_total_mark">Total Mark</string>
+    <string name="prompt_earned_mark">Earned Mark</string>
+    <string name="prompt_percentage">Percentage</string>
+    <string name="prompt_remarks">Remarks</string>
+
+
+
+???????Add New Family Details
+
+	<!--IDs-->
+	name
+	relationship
+	date_of_birth
+	age
+	employment
+	phone_no
+	remarks
+
+ 	<string name="zzzz">Name</string>
+    <string name="zzzz">Relationship</string>
+    <string name="zzzz">Date Of Birth</string>
+    <string name="zzzz">Age</string>
+    <string name="zzzz">Employment</string>
+    <string name="zzzz">Phone No</string>
+    <string name="zzzz">Remarks</string>
+
+
+

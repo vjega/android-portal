@@ -7,19 +7,15 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Profile">
+    tools:context="com.msystechnologies.msysempportal.Add_Family">
 
     <ScrollView
-        android:id="@+id/profile_form"
+        android:id="@+id/qualifications_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="78dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/detail_profile_form"
+            android:id="@+id/detail_qualifications_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -28,15 +24,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+
+
+
+
+
+
+
                 <EditText
-                    android:id="@+id/employee_id"
+                    android:id="@+id/person_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_employee_id"
-                    android:imeActionId="@+id/login"
-                    android:imeActionLabel="@string/action_sign_in_short"
-                    android:imeOptions="actionUnspecified"
-                    android:inputType="textPassword"
+                    android:hint="@string/prompt_person_name"
                     android:maxLines="1"
                     android:singleLine="true" />
 
@@ -47,10 +46,10 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/name"
+                    android:id="@+id/relationship"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_name"
+                    android:hint="@string/prompt_relationship"
                     android:maxLines="1"
                     android:singleLine="true" />
 
@@ -61,14 +60,10 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/middle_name"
+                    android:id="@+id/person_date_of_birth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_middle_name"
-                    android:imeActionId="@+id/login"
-                    android:imeActionLabel="@string/action_sign_in_short"
-                    android:imeOptions="actionUnspecified"
-                    android:inputType="textPassword"
+                    android:hint="@string/prompt_person_date_of_birth"
                     android:maxLines="1"
                     android:singleLine="true" />
 
@@ -79,14 +74,10 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/surname"
+                    android:id="@+id/age"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_surname"
-                    android:imeActionId="@+id/login"
-                    android:imeActionLabel="@string/action_sign_in_short"
-                    android:imeOptions="actionUnspecified"
-                    android:inputType="textPassword"
+                    android:hint="@string/prompt_age"
                     android:maxLines="1"
                     android:singleLine="true" />
 
@@ -97,43 +88,44 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/father_name"
+                    android:id="@+id/employment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_father_name"
-                    android:imeActionId="@+id/login"
-                    android:imeActionLabel="@string/action_sign_in_short"
-                    android:imeOptions="actionUnspecified"
-                    android:inputType="textPassword"
+                    android:hint="@string/prompt_employment"
                     android:maxLines="1"
                     android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
 
-            <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:layout_gravity="bottom">-->
-                <!--<Button-->
-                    <!--android:id="@+id/profile_save"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_marginTop="16dp"-->
-                    <!--android:text="@string/action_profile_save"-->
-                    <!--android:textStyle="bold"-->
-                    <!--/>-->
-                <!--<Button-->
-                    <!--android:id="@+id/profile_cancel"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_marginTop="16dp"-->
-                    <!--android:text="@string/action_profile_cancel"-->
-                    <!--android:textStyle="bold" />-->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <!--</LinearLayout>-->
+                <EditText
+                    android:id="@+id/phone_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_phone_no"
+                    android:maxLines="1"
+                    android:singleLine="true" />
 
+            </android.support.design.widget.TextInputLayout>
 
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/family_remarks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_family_remarks"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
 
         </LinearLayout>
     </ScrollView>
+
 </RelativeLayout>
