@@ -3,6 +3,7 @@ package com.msystechnologies.msysempportal;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -17,30 +18,11 @@ import java.util.Arrays;
 import static android.os.SystemClock.sleep;
 
 public class Add_Document extends AppCompatActivity {
-    ArrayAdapter adapter;
-    ArrayList<String> listItems;
-    ListView listView;
-    String text;
-    Documents documents = new Documents();
-
-
-//    String list[] =  documents.ready();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__document);
-
-//        listView = (ListView) findViewById(R.id.document_list);
-////                editText = (EditText) findViewById(R.id.editText);/
-//
-//        listItems = new ArrayList<String>();
-//        listItems.add("First Item ");
-//        listItems.add("Second Item ");
-//        adapter = new ArrayAdapter<String>(this, R.layout.activity_document_listview,R.id.document_text,listItems);
-//        listView.setAdapter(adapter);
-
-
 
         Spinner document_spinner = (Spinner) findViewById(R.id.document_type_spinner);
 
@@ -76,14 +58,9 @@ public class Add_Document extends AppCompatActivity {
         document_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Spinner document_spinner = (Spinner) findViewById(R.id.document_type_spinner);
-                text = document_spinner.getSelectedItem().toString();
-//                set_Items(text);
-
 
                 Intent return_documents = new Intent(Add_Document.this,Documents.class);
                 startActivity(return_documents);
-
 
             }
         });
@@ -92,17 +69,5 @@ public class Add_Document extends AppCompatActivity {
 
     }
 
-
-
-    public ArrayList<String> set_Items(){
-        System.out.println("ffffffff"+text);
-        listItems = new ArrayList<String>();
-        listItems.add(text);
-        return listItems;
-    }
-
-    public String get_Items(){
-        return text;
-    }
 
 }

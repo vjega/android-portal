@@ -1,31 +1,49 @@
 package com.msystechnologies.msysempportal;
 
+import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ActionMode;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+
+import it.gmariotti.cardslib.library.internal.Card;
+import it.gmariotti.cardslib.library.internal.CardArrayAdapter;
+import it.gmariotti.cardslib.library.internal.CardArrayMultiChoiceAdapter;
+import it.gmariotti.cardslib.library.internal.CardHeader;
+import it.gmariotti.cardslib.library.internal.CardThumbnail;
+import it.gmariotti.cardslib.library.view.CardGridView;
+import it.gmariotti.cardslib.library.view.CardListView;
+import it.gmariotti.cardslib.library.view.CardView;
 
 public class Documents extends MainActivity {
     private  ListView listView;
     EditText editText;
     ArrayList<String> listItems;
     ArrayAdapter adapter;
-//    Add_Document add_document = new Add_Document();
+
 
 
 
@@ -41,73 +59,83 @@ public class Documents extends MainActivity {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.addView(contentView, 0);
 
+//        ActionBar actionBar = getActionBar();
+//        actionBar.setHomeButtonEnabled(true);
 
-
-        listView = (ListView) findViewById(R.id.document_list);
-
-        adapter = new ArrayAdapter<String>(this, R.layout.activity_document_listview,R.id.document_text,list());
-        listView.setAdapter(adapter);
-
-
-
-
-        // Get ListView object from xml
-//        listView = (ListView) findViewById(R.id.document_list);
-//        editText = (EditText) findViewById(R.id.editText);
-//        listItems = new ArrayList<String>();
-//        listItems.add("First Item - added on Activity Create");
-
-//        Set the documents name
-//        String[] document_name = {"RESUME","SSLC MARKSHEET","HSC MARKSHEET","UG MARKSHEET","UG PROVISIONAL",
-//                            "PG DEFREE","OFFER LETTER","RELEVING LETTERS","PAYSLIPS","VOTER ID",
+//        /*Create json*/
+//        JSONObject student1 = new JSONObject();
+//        JSONObject student2 = new JSONObject();
+//        try {
+//            student1.put("id", "3");
+//            student1.put("doc_name", "SSLC");
+//            student1.put("id", "4");
+//            student1.put("doc_name", "RESUME");
 //
-//                            "PASSPORT","PAN CARD","DRIVING LICENSE","FORM 16"};
-
-//        String[] document_name = add_document.getlistitem();
-        //set adapter for listview
-//        adapter = new ArrayAdapter<String>(this, R.layout.activity_document_listview,R.id.document_text,listItems);
-//        listView.setAdapter(adapter);
-
-//        // ListView Item Click Listener
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//        } catch (JSONException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        }
+//        JSONArray jsonArray = new JSONArray();
+//        jsonArray.put(student1);
+//        jsonArray.put(student2);
 //
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view,
-//                                    int position, long id) {
-//
-//                // ListView Clicked item index
-//                int itemPosition     = position;
-////                Intent intent = new Intent(Documents.this,Add_Document.class);
-////                startActivity(intent);
-//
-//                // ListView Clicked item value
-//                String  itemValue    = (String) listView.getItemAtPosition(position);
-//
-//                // Show Alert
-//                Toast.makeText(getApplicationContext(),
-//                        "Position :"+itemPosition+"  ListItem : " +itemValue , Toast.LENGTH_LONG)
-//                        .show();
-//
-//            }
-//
-//        });
-//        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-//            @Override
-//            public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
-//                                           int pos, long id) {
-//                // TODO Auto-generated method stub
-//
-//                Log.v("long clicked","pos: " + pos);
-//
-//                return true;
-//            }
-//        });
-//
-//        registerForContextMenu(listView);
 
 
 
+////        /*get json */
+//        JSONArray get_json_array =new JSONArray();
+//        get_json_array = jsonArray;
+//        try {
+//            String str = get_json_array.getJSONObject(0).getString("doc_name");
+//            System.out.println("ffffff"+str);
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
 
+
+
+        CardListView card_list_View = (CardListView) this.findViewById(R.id.document_cardlist);
+        registerForContextMenu(card_list_View);
+        ArrayList<String> arrayList = new ArrayList<String>();
+        ArrayList<Card> cards = new ArrayList<Card>();
+
+        HashMap<String, String> map = new HashMap<String, String>();
+        ArrayList<String> a = new ArrayList<String>();
+        arrayList.add("Resume");
+        arrayList.add("SSlc");
+
+        for (int i = 0; i<arrayList.size(); i++) {
+            // Create a Card
+            Card card = new Card(this);
+            // Create a CardHeader
+            CardHeader header = new CardHeader(this);
+            // Add Header to card
+            header.setTitle(arrayList.get(i));
+            card.addCardHeader(header);
+            cards.add(card);
+        }
+
+        CardArrayMultiChoiceAdapter cardArrayMultiChoiceAdapter =new CardArrayMultiChoiceAdapter(this,cards) {
+            @Override
+            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+                return false;
+            }
+
+            @Override
+            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+                return true;
+            }
+
+            @Override
+            public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked, CardView cardView, Card card) {
+
+            }
+
+
+        };
+        card_list_View.setAdapter(cardArrayMultiChoiceAdapter);
+        registerForContextMenu(card_list_View);
 
 
 
@@ -115,43 +143,36 @@ public class Documents extends MainActivity {
         document_fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                listItems.add(editText.getText().toString());
-//                adapter.notifyDataSetChanged();
                 Intent fab_intent = new Intent(Documents.this,Add_Document.class);
                 startActivity(fab_intent);
 
             }
         });
-
-
-    }
-
-
-
-    public ArrayList<String> list(){
-        listItems = new ArrayList<String>();
-        listItems.add("BTECH");
-        listItems.add("SSLC");
-//        listItems = add_document.set_Items();
-        System.out.println("OOOOOOOOOO"+listItems);
-        return listItems;
-
     }
 
 
 
 
     @Override
-    public void onCreateContextMenu(ContextMenu menu, View v,
-                                    ContextMenu.ContextMenuInfo menuInfo) {
-        if (v.getId()==R.id.document_list) {
-            AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
-            String[] menuItems = getResources().getStringArray(R.array.document_listview_click);
-            for (int i = 0; i<menuItems.length; i++) {
-                menu.add(Menu.NONE, i, i, menuItems[i]);
-            }
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
+    {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.setHeaderTitle("Select The Action");
+        menu.add(0, v.getId(), 0, "Call");//groupId, itemId, order, title
+        menu.add(0, v.getId(), 0, "SMS");
+    }
+    @Override
+    public boolean onContextItemSelected(MenuItem item){
+        if(item.getTitle()=="Call"){
+            Toast.makeText(getApplicationContext(),"calling code",Toast.LENGTH_LONG).show();
         }
+        else if(item.getTitle()=="SMS"){
+            Toast.makeText(getApplicationContext(),"sending sms code",Toast.LENGTH_LONG).show();
+        }else{
+            return false;
+        }
+        return true;
     }
 
-
 }
+
