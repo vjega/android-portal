@@ -54,14 +54,14 @@
             </android.support.design.widget.TextInputLayout>
 
 
-            <Button
+            <!--<Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/save"
                 android:id="@+id/document_save_button"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true" />-->
 
         </LinearLayout>
     </ScrollView>

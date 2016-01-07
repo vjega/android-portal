@@ -16,6 +16,6 @@
         android:text="@string/apply_leave"
         android:id="@+id/nav_applyleave"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="121dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
