@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
 import android.view.Display;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -29,17 +30,25 @@ public class MainActivity extends AppCompatActivity {
 
     private Context context;
     private  NavigationView navigationView;
+    private DrawerLayout drawer;
+    private ExpandableListView expandableListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -51,25 +60,15 @@ public class MainActivity extends AppCompatActivity {
         });
         fab.hide();
 
-        ImageView profile_img = (ImageView)findViewById(R.id.action_edit) ;
-//        profile_img.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                System.out.println("called");
-////                Intent edit_intent = new Intent(MainActivity.this,Profile.class);
-////                startActivity(edit_intent);
-//            }
-//        });
-
 
 
             /*get the headers and subitems from string array*/
-        final List<String> Headings=new ArrayList<String>();
+        ArrayList<String> Headings=new ArrayList<String>();
 
-        List<String>home_sub=new ArrayList<String>();
-        List<String>leave_sub=new ArrayList<String>();
-        List<String>infrastructure_sub=new ArrayList<String>();
-        List<String>others_sub=new ArrayList<String>();
+        ArrayList<String>home_sub=new ArrayList<String>();
+        ArrayList<String>leave_sub=new ArrayList<String>();
+        ArrayList<String>infrastructure_sub=new ArrayList<String>();
+        ArrayList<String>others_sub=new ArrayList<String>();
 
         final HashMap<String,List<String>> childlist = new HashMap<String, List<String>>();
 
@@ -110,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         ExpandableListAdapter listAdapter = new Expandablelistadapter(this, Headings, childlist);
 
         /*Get the Expandable listview*/
-        ExpandableListView expandableListView = (ExpandableListView)findViewById(R.id.expand);
+         expandableListView = (ExpandableListView)findViewById(R.id.expand);
 
         expandableListView.setAdapter(listAdapter);
 
@@ -124,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Intent myIntent = new Intent(MainActivity.this,Dashboard.class);
                     startActivity(myIntent);
+
                     return true; // This way the expander cannot be collapsed
                 }
                 else{
@@ -249,8 +249,6 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 }
-
-                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
                 return false;
             }
@@ -258,30 +256,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
     }
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main, menu);
-//        return true;
-//    }
 //
 //    @Override
 //    public boolean onOptionsItemSelected(MenuItem item) {
