@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
+import android.support.v7.widget.PopupMenu;
 import android.util.Log;
 import android.view.ActionMode;
 import android.view.ContextMenu;
@@ -13,10 +14,12 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -59,9 +62,6 @@ public class Documents extends MainActivity {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.addView(contentView, 0);
 
-//        ActionBar actionBar = getActionBar();
-//        actionBar.setHomeButtonEnabled(true);
-
 //        /*Create json*/
 //        JSONObject student1 = new JSONObject();
 //        JSONObject student2 = new JSONObject();
@@ -95,8 +95,8 @@ public class Documents extends MainActivity {
 
 
 
-        CardListView card_list_View = (CardListView) this.findViewById(R.id.document_cardlist);
-        registerForContextMenu(card_list_View);
+        ListView list_View = (ListView) this.findViewById(R.id.document_listView);
+        registerForContextMenu(list_View);
         ArrayList<String> arrayList = new ArrayList<String>();
         ArrayList<Card> cards = new ArrayList<Card>();
 
@@ -116,27 +116,9 @@ public class Documents extends MainActivity {
             cards.add(card);
         }
 
-        CardArrayMultiChoiceAdapter cardArrayMultiChoiceAdapter =new CardArrayMultiChoiceAdapter(this,cards) {
-            @Override
-            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-                return false;
-            }
-
-            @Override
-            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-                return true;
-            }
-
-            @Override
-            public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked, CardView cardView, Card card) {
-
-            }
-
-
-        };
-        card_list_View.setAdapter(cardArrayMultiChoiceAdapter);
-        registerForContextMenu(card_list_View);
-
+        adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, arrayList);
+        list_View.setAdapter(adapter);
 
 
         FloatingActionButton document_fab = (FloatingActionButton) findViewById(R.id.document_fab);
@@ -148,30 +130,16 @@ public class Documents extends MainActivity {
 
             }
         });
-    }
 
+        list_View.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                Intent edit_doc = new Intent(Documents.this,Edit_document.class);
+                startActivity(edit_doc);
 
-
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
-    {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        menu.setHeaderTitle("Select The Action");
-        menu.add(0, v.getId(), 0, "Call");//groupId, itemId, order, title
-        menu.add(0, v.getId(), 0, "SMS");
-    }
-    @Override
-    public boolean onContextItemSelected(MenuItem item){
-        if(item.getTitle()=="Call"){
-            Toast.makeText(getApplicationContext(),"calling code",Toast.LENGTH_LONG).show();
-        }
-        else if(item.getTitle()=="SMS"){
-            Toast.makeText(getApplicationContext(),"sending sms code",Toast.LENGTH_LONG).show();
-        }else{
-            return false;
-        }
-        return true;
+            }
+        });
     }
 
 }

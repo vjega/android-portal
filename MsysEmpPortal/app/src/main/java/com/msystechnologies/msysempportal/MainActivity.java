@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private  NavigationView navigationView;
     private DrawerLayout drawer;
     private ExpandableListView expandableListView;
+    private int lastExpandedPosition = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +114,17 @@ public class MainActivity extends AppCompatActivity {
 
         expandableListView.setAdapter(listAdapter);
 
+
+        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+            int previousGroup = -1;
+
+            @Override
+            public void onGroupExpand(int groupPosition) {
+                if(groupPosition != previousGroup)
+                    expandableListView.collapseGroup(previousGroup);
+                previousGroup = groupPosition;
+            }
+        });
 
         /*Set activity for groups*/
         expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {

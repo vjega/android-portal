@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.msystechnologies.msysempportal.Add_Document">
+    tools:context="com.msystechnologies.msysempportal.Edit_document">
+
 
     <ScrollView
         android:id="@+id/document_form"

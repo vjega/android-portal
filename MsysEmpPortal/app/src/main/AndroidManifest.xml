@@ -44,13 +44,11 @@
         <activity
             android:name=".Profile"
             android:label="Profile"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Settings"
             android:label="Settings"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".Documents"
             android:label="Documents"
@@ -160,7 +158,9 @@
         <activity android:name=".Add_Visa" />
         <activity android:name=".Add_Resource" />
         <activity android:name=".Add_Skillset" />
-
+        <activity android:name=".Edit_document"
+            android:label="Document Details">
+        </activity>
     </application>
 
 </manifest>
