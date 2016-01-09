@@ -11,7 +11,7 @@
 
     <ScrollView
         android:id="@+id/document_form"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
@@ -28,16 +28,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_email"
+                    android:padding="15dp"
                     android:id="@+id/document_type_spinner" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="38dp"
+                >
                 <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="15dp"
+
                     android:id="@+id/course_spinner" />
 
             </android.support.design.widget.TextInputLayout>
@@ -49,11 +54,45 @@
                 <Spinner
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:layout_marginTop="48dp"
+
                     android:id="@+id/submitted_spinner" />
 
             </android.support.design.widget.TextInputLayout>
 
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                >
+            <Button
+                android:layout_width="132dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Browse"
+                android:id="@+id/browse"
+                android:padding="15dp"
+               />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="68dp"
+                >
+
+                <EditText
+                     android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                     android:id="@+id/doc_remark_editText"
+                    android:hint="@string/Remarks"
+                    android:inputType="none" />
+            </android.support.design.widget.TextInputLayout>
+
         </LinearLayout>
     </ScrollView>
+
+
 
 </RelativeLayout>

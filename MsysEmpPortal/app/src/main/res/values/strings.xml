@@ -209,6 +209,9 @@
     <string name="remarks">Remarks</string>
     <string name="save">Save</string>
     <string name="document_type">Document Type</string>
+    <string name="browse">Browse</string>
+    <string name="Browse">Browse</string>
+    <string name="Remarks">Remarks</string>
 
 
     <string-array name="document_type_array">

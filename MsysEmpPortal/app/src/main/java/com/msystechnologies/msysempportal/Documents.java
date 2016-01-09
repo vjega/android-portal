@@ -46,6 +46,7 @@ public class Documents extends MainActivity {
     EditText editText;
     ArrayList<String> listItems;
     ArrayAdapter adapter;
+    String get_doc;
 
 
 
@@ -62,48 +63,44 @@ public class Documents extends MainActivity {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.addView(contentView, 0);
 
-//        /*Create json*/
-//        JSONObject student1 = new JSONObject();
-//        JSONObject student2 = new JSONObject();
-//        try {
-//            student1.put("id", "3");
-//            student1.put("doc_name", "SSLC");
-//            student1.put("id", "4");
-//            student1.put("doc_name", "RESUME");
-//
-//        } catch (JSONException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        }
-//        JSONArray jsonArray = new JSONArray();
-//        jsonArray.put(student1);
-//        jsonArray.put(student2);
-//
+        /*Create json*/
+        JSONObject student1 = new JSONObject();
+        JSONObject student2 = new JSONObject();
+        try {
+            student1.put("id", "3");
+            student1.put("doc_name", "SSLC");
+            student2.put("id", "4");
+            student2.put("doc_name", "RESUME");
+
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        JSONArray jsonArray = new JSONArray();
+        jsonArray.put(student1);
+        jsonArray.put(student2);
 
 
+        ArrayList<String> arrayList = new ArrayList<String>();
 
 ////        /*get json */
-//        JSONArray get_json_array =new JSONArray();
-//        get_json_array = jsonArray;
-//        try {
-//            String str = get_json_array.getJSONObject(0).getString("doc_name");
-//            System.out.println("ffffff"+str);
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//
+        JSONArray get_json_array =new JSONArray();
+        get_json_array = jsonArray;
+        try {
+            for(int i =0;i<jsonArray.length();i++){
+                get_doc = get_json_array.getJSONObject(i).getString("doc_name");
+                arrayList.add(get_doc);
+            }
 
-
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         ListView list_View = (ListView) this.findViewById(R.id.document_listView);
-        registerForContextMenu(list_View);
-        ArrayList<String> arrayList = new ArrayList<String>();
         ArrayList<Card> cards = new ArrayList<Card>();
 
-        HashMap<String, String> map = new HashMap<String, String>();
-        ArrayList<String> a = new ArrayList<String>();
-        arrayList.add("Resume");
-        arrayList.add("SSlc");
+
 
         for (int i = 0; i<arrayList.size(); i++) {
             // Create a Card

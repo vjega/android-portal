@@ -2,6 +2,7 @@ package com.msystechnologies.msysempportal;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -114,8 +115,9 @@ public class Dashboard extends MainActivity {
                                 startActivity(birthday_intent);
                                 break;
                             case 5:
-                                Intent holiday_intent = new Intent(Dashboard.this, Holiday.class);
-                                startActivity(holiday_intent);
+                                Intent calIntent = new Intent(Intent.ACTION_INSERT);
+                                calIntent.setData(Uri.parse("content://com.android.calendar/events/"));
+                                startActivity(calIntent);
                                 break;
 
 

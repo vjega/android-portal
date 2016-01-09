@@ -27,6 +27,10 @@ public class Add_Document extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__document);
 
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         Spinner document_spinner = (Spinner) findViewById(R.id.document_type_spinner);
 
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -73,10 +77,9 @@ public class Add_Document extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         switch (id) {
-            case R.id.doc_clear:
-                Intent home_intent = new Intent(this, Documents.class);
-                startActivity(home_intent);
-                break;
+            case android.R.id.home:
+                Intent intent = new Intent(Add_Document.this,Documents.class);
+                startActivity(intent);
             case R.id.doc_done:
                 Toast.makeText(getApplicationContext(), "Document Saved", Toast.LENGTH_SHORT).show();
                 break;

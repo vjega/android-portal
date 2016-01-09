@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -15,11 +17,13 @@ public class Edit_document extends AppCompatActivity {
     private Spinner document_spinner;
     private Spinner course_spinner;
     private Spinner submit_spinner;
+    Button browse;
+    EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_document);
+        setContentView(R.layout.activity_add__document);
 
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
@@ -54,6 +58,12 @@ public class Edit_document extends AppCompatActivity {
         submit_spinner.setAdapter(submitted_adapter);
         submit_spinner.setEnabled(false);
 
+        browse = (Button)findViewById(R.id.browse);
+        browse.setEnabled(false);
+
+        editText = (EditText)findViewById(R.id.doc_remark_editText);
+        editText.setFocusable(false);
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -75,6 +85,8 @@ public class Edit_document extends AppCompatActivity {
                 document_spinner.setEnabled(true);
                 course_spinner.setEnabled(true);
                 submit_spinner.setEnabled(true);
+                browse.setEnabled(true);
+//                editText.F(true);
 
                 Toast.makeText(getApplicationContext(), "edit", Toast.LENGTH_SHORT).show();
                 break;
