@@ -21,6 +21,10 @@ import java.util.Arrays;
 import static android.os.SystemClock.sleep;
 
 public class Add_Document extends AppCompatActivity {
+    private Spinner document_spinner;
+    private Spinner course_spinner;
+    private Spinner submit_spinner;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +35,9 @@ public class Add_Document extends AppCompatActivity {
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        Spinner document_spinner = (Spinner) findViewById(R.id.document_type_spinner);
+
+
+        document_spinner = (Spinner) findViewById(R.id.document_type_spinner);
 
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> type_adapter = ArrayAdapter.createFromResource(this,
@@ -45,20 +51,35 @@ public class Add_Document extends AppCompatActivity {
 
 
 
-        Spinner course_spinner = (Spinner) findViewById(R.id.course_spinner);
+
+        course_spinner = (Spinner) findViewById(R.id.course_spinner);
         ArrayAdapter<CharSequence> course_adapter = ArrayAdapter.createFromResource(this,
                 R.array.document_course_array, android.R.layout.simple_spinner_item);
         course_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         course_spinner.setAdapter(course_adapter);
 
 
-        Spinner submit_spinner = (Spinner) findViewById(R.id.submitted_spinner);
+        submit_spinner = (Spinner) findViewById(R.id.submitted_spinner);
         ArrayAdapter<CharSequence> submitted_adapter = ArrayAdapter.createFromResource(this,
                 R.array.document_submitted_array, android.R.layout.simple_spinner_item);
         submitted_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         submit_spinner.setAdapter(submitted_adapter);
 
 
+        Button browse =(Button)findViewById(R.id.browse);
+        browse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                get_spinner_value();
+            }
+        });
+    }
+
+    public void get_spinner_value(){
+        String document_text = document_spinner.getSelectedItem().toString();
+        String course_text   = course_spinner.getSelectedItem().toString();
+        String submit_text   = submit_spinner.getSelectedItem().toString();
+        System.out.println("tttttt"+document_text+course_text+submit_text);
     }
 
     @Override
@@ -74,7 +95,6 @@ public class Add_Document extends AppCompatActivity {
         // automatically handle clicks on the Profile/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         switch (id) {
             case android.R.id.home:

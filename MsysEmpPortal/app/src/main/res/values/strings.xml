@@ -238,7 +238,7 @@
         <item>No Relevant</item>
     </string-array>
     <string-array name="document_submitted_array">
-        <item>Select type</item>
+        <item>Submitted</item>
         <item>Photo copy</item>
         <item>original</item>
     </string-array>

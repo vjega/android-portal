@@ -47,6 +47,8 @@ public class Documents extends MainActivity {
     ArrayList<String> listItems;
     ArrayAdapter adapter;
     String get_doc;
+    ArrayList<String> arrayList = new ArrayList<String>();
+    ArrayList<Card> cards = new ArrayList<Card>();
 
 
 
@@ -56,6 +58,7 @@ public class Documents extends MainActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_documents);
 
+
 //        Set Navigation drawyer tool
         LayoutInflater inflater = (LayoutInflater) this
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -63,14 +66,22 @@ public class Documents extends MainActivity {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.addView(contentView, 0);
 
+
+
         /*Create json*/
-        JSONObject student1 = new JSONObject();
-        JSONObject student2 = new JSONObject();
+        JSONObject emp1 = new JSONObject();
+        JSONObject emp2 = new JSONObject();
         try {
-            student1.put("id", "3");
-            student1.put("doc_name", "SSLC");
-            student2.put("id", "4");
-            student2.put("doc_name", "RESUME");
+            emp1.put("id", "3");
+            emp1.put("doc_name", "SSLC MARKSHEET");
+            emp1.put("course", "Regular");
+            emp1.put("in_hand", "Copy");
+
+
+            emp2.put("id", "4");
+            emp2.put("doc_name", "RESUME");
+            emp2.put("course", "Distance");
+            emp2.put("in_hand", "Original");
 
         } catch (JSONException e) {
             // TODO Auto-generated catch block
@@ -78,11 +89,12 @@ public class Documents extends MainActivity {
         }
 
         JSONArray jsonArray = new JSONArray();
-        jsonArray.put(student1);
-        jsonArray.put(student2);
+        jsonArray.put(emp1);
+        jsonArray.put(emp2);
 
 
-        ArrayList<String> arrayList = new ArrayList<String>();
+
+
 
 ////        /*get json */
         JSONArray get_json_array =new JSONArray();
@@ -98,8 +110,6 @@ public class Documents extends MainActivity {
         }
 
         ListView list_View = (ListView) this.findViewById(R.id.document_listView);
-        ArrayList<Card> cards = new ArrayList<Card>();
-
 
 
         for (int i = 0; i<arrayList.size(); i++) {
