@@ -9,13 +9,25 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.msystechnologies.msysempportal.ItTickets">
 
-    <TextView
+    <ListView
+        android:id="@+id/it_ticket_listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="58dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/it_ticket_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/it_tickets"
-        android:id="@+id/nav_ittickets"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="123dp" />
+        android:layout_gravity="bottom|end"
+        android:tint="@android:color/white"
+        android:src="@android:drawable/ic_menu_add"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/it_ticket_listView"
+        android:layout_alignEnd="@+id/it_ticket_listView" />
+
+
 </RelativeLayout>

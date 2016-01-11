@@ -104,9 +104,14 @@
     <string name="prompt_pro_remarks">Remarks</string>
 
     <!-- Strings related to add skillset detail page -->
+    <string name="prompt_bug_title">Title</string>
+    <string name="prompt_bug_type_spinner">Bug Type</string>
+    <string name="prompt_last_used">Description</string>
+
+    <!-- Strings related to add bug detail page -->
     <string name="prompt_skillset">Skillset</string>
     <string name="prompt_experience">Experience</string>
-    <string name="prompt_last_used">Last Used</string>
+    <string name="prompt_bug_description">Description</string>
 
     <!-- Strings related to settings page -->
     <string name="prompt_old_password">Old Password</string>
@@ -162,6 +167,7 @@
     <string-array name="Infrastructure_sub">
         <item>IT Tickets</item>
         <item>HR Tickets</item>
+        <item>Finance Tickets</item>
         <item>Interview Details</item>
         <item>Interview History</item>
         <item>Circulars</item>
@@ -228,7 +234,6 @@
         <item>PAN CARD</item>
         <item>DRIVING LICENSE</item>
         <item>FORM 16</item>
-
     </string-array>
 
     <string-array name="document_course_array">
@@ -237,15 +242,23 @@
         <item>Distance</item>
         <item>No Relevant</item>
     </string-array>
+
     <string-array name="document_submitted_array">
         <item>Submitted</item>
         <item>Photo copy</item>
         <item>original</item>
     </string-array>
 
+    <string-array name="bug_type_array">
+        <item>Select type</item>
+        <item>Bug</item>
+        <item>Feature</item>
+    </string-array>
+
     <string-array name="document_listview_click">
         <item>Edit</item>
         <item>Delete</item>
     </string-array>
+    <string name="title_activity_add__bug">Add New</string>
 
 </resources>

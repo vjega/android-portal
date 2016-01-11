@@ -27,14 +27,12 @@
         app:showAsAction="ifRoom|withText"
         android:title="">
     </item>
+
     <item
         android:id="@+id/doc_done"
         android:icon="@drawable/ic_done_white_18dp"
         app:showAsAction="ifRoom"
         android:title="">
     </item>
-
-
-
 
 </menu>

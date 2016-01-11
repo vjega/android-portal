@@ -158,9 +158,16 @@
         <activity android:name=".Add_Visa" />
         <activity android:name=".Add_Resource" />
         <activity android:name=".Add_Skillset" />
-        <activity android:name=".Edit_document"
-            android:label="Document Details">
-        </activity>
+        <activity
+            android:name=".Edit_document"
+            android:label="Document Details" />
+        <activity
+            android:name=".FinanceTickets"
+            android:label="Finance Tickets"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Add_Bug" />
+        <activity android:name=".Edit_Bug"
+            android:label="Bug Details" />
     </application>
 
 </manifest>

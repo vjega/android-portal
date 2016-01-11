@@ -226,18 +226,22 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(hr_intent);
                             break;
                         case 2:
+                            Intent finance_intent = new Intent(MainActivity.this, FinanceTickets.class);
+                            startActivity(finance_intent);
+                            break;
+                        case 3:
                             Intent interview_details_intent = new Intent(MainActivity.this, InterviewDetails.class);
                             startActivity(interview_details_intent);
                             break;
-                        case 3:
+                        case 4:
                             Intent interview_history_intent = new Intent(MainActivity.this, InterviewHistory.class);
                             startActivity(interview_history_intent);
                             break;
-                        case 4:
+                        case 5:
                             Intent circulars_intent = new Intent(MainActivity.this, Circulars.class);
                             startActivity(circulars_intent);
                             break;
-                        case 5:
+                        case 6:
                             Intent resource_intent = new Intent(MainActivity.this, Resource.class);
                             startActivity(resource_intent);
                             break;

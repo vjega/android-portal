@@ -9,13 +9,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.msystechnologies.msysempportal.Openings">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ListView
+        android:id="@+id/openings_listview"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/openings"
-        android:id="@+id/nav_openings"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="145dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="58dp" />
+
+
 </RelativeLayout>

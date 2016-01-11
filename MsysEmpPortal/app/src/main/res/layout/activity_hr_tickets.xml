@@ -9,13 +9,24 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.msystechnologies.msysempportal.HrTickets">
 
-    <TextView
+    <ListView
+        android:id="@+id/hr_ticket_listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="58dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/hr_ticket_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/hr_tickets"
-        android:id="@+id/nav_hrtickets"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="135dp" />
+        android:layout_gravity="bottom|end"
+        android:tint="@android:color/white"
+        android:src="@android:drawable/ic_menu_add"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/hr_ticket_listView"
+        android:layout_alignEnd="@+id/hr_ticket_listView" />
+
 </RelativeLayout>
