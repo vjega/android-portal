@@ -48,7 +48,6 @@ public class Documents extends MainActivity {
     ArrayAdapter adapter;
     String get_doc;
     ArrayList<String> arrayList = new ArrayList<String>();
-    ArrayList<Card> cards = new ArrayList<Card>();
 
 
 
@@ -68,60 +67,25 @@ public class Documents extends MainActivity {
 
 
 
-        /*Create json*/
-        JSONObject emp1 = new JSONObject();
-        JSONObject emp2 = new JSONObject();
-        try {
-            emp1.put("id", "3");
-            emp1.put("doc_name", "SSLC MARKSHEET");
-            emp1.put("course", "Regular");
-            emp1.put("in_hand", "Copy");
-
-
-            emp2.put("id", "4");
-            emp2.put("doc_name", "RESUME");
-            emp2.put("course", "Distance");
-            emp2.put("in_hand", "Original");
-
-        } catch (JSONException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        JSONArray jsonArray = new JSONArray();
-        jsonArray.put(emp1);
-        jsonArray.put(emp2);
 
 
 
 
+//////        /*get json */
+//        JSONArray get_json_array =new JSONArray();
+//        get_json_array = jsonArray;
+//        try {
+//            for(int i =0;i<jsonArray.length();i++){
+//                get_doc = get_json_array.getJSONObject(i).getString("doc_name");
+//                arrayList.add(get_doc);
+//            }
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
 
-////        /*get json */
-        JSONArray get_json_array =new JSONArray();
-        get_json_array = jsonArray;
-        try {
-            for(int i =0;i<jsonArray.length();i++){
-                get_doc = get_json_array.getJSONObject(i).getString("doc_name");
-                arrayList.add(get_doc);
-            }
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
         ListView list_View = (ListView) this.findViewById(R.id.document_listView);
-
-
-        for (int i = 0; i<arrayList.size(); i++) {
-            // Create a Card
-            Card card = new Card(this);
-            // Create a CardHeader
-            CardHeader header = new CardHeader(this);
-            // Add Header to card
-            header.setTitle(arrayList.get(i));
-            card.addCardHeader(header);
-            cards.add(card);
-        }
 
         adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, arrayList);
