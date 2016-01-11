@@ -52,6 +52,7 @@ public class Documents extends MainActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,23 +68,46 @@ public class Documents extends MainActivity {
 
 
 
+        /*Create json*/
+        JSONObject emp1 = new JSONObject();
+        JSONObject emp2 = new JSONObject();
+        try {
+            emp1.put("id", "3");
+            emp1.put("doc_name", "SSLC MARKSHEET");
+            emp1.put("course", "Regular");
+            emp1.put("in_hand", "Copy");
+
+
+            emp2.put("id", "4");
+            emp2.put("doc_name", "RESUME");
+            emp2.put("course", "Distance");
+            emp2.put("in_hand", "Original");
+
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        JSONArray jsonArray = new JSONArray();
+        jsonArray.put(emp1);
+        jsonArray.put(emp2);
 
 
 
 
-//////        /*get json */
-//        JSONArray get_json_array =new JSONArray();
-//        get_json_array = jsonArray;
-//        try {
-//            for(int i =0;i<jsonArray.length();i++){
-//                get_doc = get_json_array.getJSONObject(i).getString("doc_name");
-//                arrayList.add(get_doc);
-//            }
-//
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
 
+////        /*get json */
+        JSONArray get_json_array =new JSONArray();
+        get_json_array = jsonArray;
+        try {
+            for(int i =0;i<jsonArray.length();i++){
+                get_doc = get_json_array.getJSONObject(i).getString("doc_name");
+                arrayList.add(get_doc);
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         ListView list_View = (ListView) this.findViewById(R.id.document_listView);
 

@@ -74,11 +74,6 @@ public class Edit_document extends AppCompatActivity {
 
     }
 
-    public void get_spinner_value(){
-        String document_text = document_spinner.getSelectedItem().toString();
-        String course_text   = course_spinner.getSelectedItem().toString();
-        String submit_text   = submit_spinner.getSelectedItem().toString();
-    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

@@ -30,6 +30,7 @@ public class Qualifications extends MainActivity {
     EditText editText;
     ArrayList<String> listItems;
     ArrayAdapter adapter;
+    ArrayList<String> arrayList = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,53 +43,20 @@ public class Qualifications extends MainActivity {
         drawer.addView(contentView, 0);
 
 
+        ListView list_View = (ListView) this.findViewById(R.id.qualifications_listView);
 
-        //card list start
-        CardListView card_list_View = (CardListView) this.findViewById(R.id.qualification_cardlist);
-        registerForContextMenu(card_list_View);
-        ArrayList<String> arrayList = new ArrayList<String>();
-        ArrayList<Card> cards = new ArrayList<Card>();
-
-        HashMap<String, String> map = new HashMap<String, String>();
-        ArrayList<String> a = new ArrayList<String>();
-        arrayList.add("10th");
-        arrayList.add("12th");
-
-        for (int i = 0; i<arrayList.size(); i++) {
-            // Create a Card
-            Card card = new Card(this);
-            // Create a CardHeader
-            CardHeader header = new CardHeader(this);
-            // Add Header to card
-            header.setTitle(arrayList.get(i));
-            card.addCardHeader(header);
-            cards.add(card);
-        }
-
-        CardArrayMultiChoiceAdapter cardArrayMultiChoiceAdapter =new CardArrayMultiChoiceAdapter(this,cards) {
-            @Override
-            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-                return false;
-            }
-
-            @Override
-            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-                return true;
-            }
-
-            @Override
-            public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked, CardView cardView, Card card) {
-
-            }
-
-
-        };
-        card_list_View.setAdapter(cardArrayMultiChoiceAdapter);
-        registerForContextMenu(card_list_View);
+        arrayList.add("BTECH");
+        arrayList.add("MCA");
+        adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, arrayList);
+        list_View.setAdapter(adapter);
 
 
 
-        FloatingActionButton document_fab = (FloatingActionButton) findViewById(R.id.qualification_fab);
+
+
+
+        FloatingActionButton document_fab = (FloatingActionButton) findViewById(R.id.qualifications_fab);
         document_fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
