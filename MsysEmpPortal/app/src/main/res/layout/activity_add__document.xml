@@ -86,7 +86,7 @@
                      android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                      android:id="@+id/doc_remark_editText"
-                    android:hint="@string/Remarks"
+                    android:hint="@string/remarks"
                     android:inputType="none" />
             </android.support.design.widget.TextInputLayout>
 

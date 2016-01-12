@@ -6,9 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class LeaveHistory extends MainActivity {
-
+    ArrayAdapter adapter;
+    ArrayList<String> arrayList = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,5 +23,13 @@ public class LeaveHistory extends MainActivity {
         View contentView = inflater.inflate(R.layout.activity_leave_history, null, false);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.addView(contentView, 0);
+
+        ListView list_View = (ListView) this.findViewById(R.id.leave_history_listView);
+        arrayList.add("ML");
+        arrayList.add("CL");
+        adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, arrayList);
+        list_View.setAdapter(adapter);
+
     }
 }

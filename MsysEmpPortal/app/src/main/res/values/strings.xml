@@ -217,7 +217,7 @@
     <string name="document_type">Document Type</string>
     <string name="browse">Browse</string>
     <string name="Browse">Browse</string>
-    <string name="Remarks">Remarks</string>
+
 
 
     <string-array name="document_type_array">
@@ -259,6 +259,16 @@
         <item>Edit</item>
         <item>Delete</item>
     </string-array>
+    <string-array name="apply_leave">
+        <item>Leave types</item>
+        <item>Edit</item>
+        <item>Delete</item>
+    </string-array>
+
     <string name="title_activity_add__bug">Add New</string>
+    <string name="start_date">Start Date</string>
+    <string name="end_date">End Date</string>
+    <string name="days">Days</string>
+    <string name="enddate">End Date</string>
 
 </resources>

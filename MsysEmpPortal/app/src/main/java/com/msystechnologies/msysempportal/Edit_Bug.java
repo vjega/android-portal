@@ -17,7 +17,7 @@ public class Edit_Bug extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit__bug);
+        setContentView(R.layout.activity_add__bug);
 
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
@@ -34,6 +34,9 @@ public class Edit_Bug extends AppCompatActivity {
 
         // Apply the adapter to the spinner
         bug_type_spinner.setAdapter(type_adapter);
+
+
+
     }
 
     public void get_spinner_value(){

@@ -29,7 +29,7 @@ public class FinanceTickets extends MainActivity {
 //        setContentView(R.layout.activity_it_tickets);
         LayoutInflater inflater = (LayoutInflater) this
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View contentView = inflater.inflate(R.layout.activity_it_tickets, null, false);
+        View contentView = inflater.inflate(R.layout.activity_finance_tickets, null, false);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.addView(contentView, 0);
 

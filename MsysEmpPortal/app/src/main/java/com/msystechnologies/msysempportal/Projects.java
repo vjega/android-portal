@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,6 +24,8 @@ import it.gmariotti.cardslib.library.view.CardListView;
 import it.gmariotti.cardslib.library.view.CardView;
 
 public class Projects extends MainActivity {
+    ArrayAdapter adapter;
+    ArrayList<String> arrayList = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,48 +37,15 @@ public class Projects extends MainActivity {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.addView(contentView, 0);
 
-        //card list start
-        CardListView card_list_View = (CardListView) this.findViewById(R.id.project_cardlist);
-        registerForContextMenu(card_list_View);
-        ArrayList<String> arrayList = new ArrayList<String>();
-        ArrayList<Card> cards = new ArrayList<Card>();
+        ListView list_View = (ListView) this.findViewById(R.id.project_listView);
 
-        HashMap<String, String> map = new HashMap<String, String>();
-        ArrayList<String> a = new ArrayList<String>();
-        arrayList.add("10th");
-        arrayList.add("12th");
-
-        for (int i = 0; i<arrayList.size(); i++) {
-            // Create a Card
-            Card card = new Card(this);
-            // Create a CardHeader
-            CardHeader header = new CardHeader(this);
-            // Add Header to card
-            header.setTitle(arrayList.get(i));
-            card.addCardHeader(header);
-            cards.add(card);
-        }
-
-        CardArrayMultiChoiceAdapter cardArrayMultiChoiceAdapter =new CardArrayMultiChoiceAdapter(this,cards) {
-            @Override
-            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-                return false;
-            }
-
-            @Override
-            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-                return true;
-            }
-
-            @Override
-            public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked, CardView cardView, Card card) {
-
-            }
+        arrayList.add("GMSAT");
+        arrayList.add("GROUP CARE");
+        adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, arrayList);
+        list_View.setAdapter(adapter);
 
 
-        };
-        card_list_View.setAdapter(cardArrayMultiChoiceAdapter);
-        registerForContextMenu(card_list_View);
 
 
 
