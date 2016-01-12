@@ -32,14 +32,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-import it.gmariotti.cardslib.library.internal.Card;
-import it.gmariotti.cardslib.library.internal.CardArrayAdapter;
-import it.gmariotti.cardslib.library.internal.CardArrayMultiChoiceAdapter;
-import it.gmariotti.cardslib.library.internal.CardHeader;
-import it.gmariotti.cardslib.library.internal.CardThumbnail;
-import it.gmariotti.cardslib.library.view.CardGridView;
-import it.gmariotti.cardslib.library.view.CardListView;
-import it.gmariotti.cardslib.library.view.CardView;
 
 public class Documents extends MainActivity {
     private  ListView listView;
@@ -48,8 +40,6 @@ public class Documents extends MainActivity {
     ArrayAdapter adapter;
     String get_doc;
     ArrayList<String> arrayList = new ArrayList<String>();
-
-
 
 
 
@@ -109,29 +99,36 @@ public class Documents extends MainActivity {
             e.printStackTrace();
         }
 
+        //get a listview from xml
         ListView list_View = (ListView) this.findViewById(R.id.document_listView);
 
+
+        //set to the adapter
         adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, arrayList);
         list_View.setAdapter(adapter);
 
 
-        FloatingActionButton document_fab = (FloatingActionButton) findViewById(R.id.document_fab);
-        document_fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent fab_intent = new Intent(Documents.this,Add_Document.class);
-                startActivity(fab_intent);
 
-            }
-        });
-
+        //Onclick listener for listview
         list_View.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent edit_doc = new Intent(Documents.this,Edit_document.class);
                 startActivity(edit_doc);
+
+            }
+        });
+
+
+        //Floating action
+        FloatingActionButton document_fab = (FloatingActionButton) findViewById(R.id.document_fab);
+        document_fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent fab_intent = new Intent(Documents.this,Add_Document.class);
+                startActivity(fab_intent);
 
             }
         });

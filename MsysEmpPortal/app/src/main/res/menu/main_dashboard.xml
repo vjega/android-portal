@@ -2,6 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/dashboard_documents"
+        android:icon="@drawable/ic_description_white_24dp"
+        app:showAsAction="ifRoom"
+        android:title="">
+    </item>
+    <item
         android:id="@+id/dashboard_notifications"
         android:icon="@drawable/ic_notifications_white_24dp"
         app:showAsAction="ifRoom|withText"
@@ -13,4 +19,5 @@
         app:showAsAction="ifRoom"
         android:title="">
     </item>
+
 </menu>

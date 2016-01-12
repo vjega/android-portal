@@ -155,11 +155,14 @@ public class Dashboard extends MainActivity {
 
         //noinspection SimplifiableIfStatement
         switch (id) {
+            case R.id.dashboard_documents:
+                Toast.makeText(getApplicationContext(), "published", Toast.LENGTH_SHORT).show();
+                break;
             case R.id.dashboard_notifications:
-                Toast.makeText(getApplicationContext(), "Notification Saved", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Notification ", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.dashboard_todolist:
-                Toast.makeText(getApplicationContext(), "Todolist Saved", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Todolist ", Toast.LENGTH_SHORT).show();
                 break;
 
         }
