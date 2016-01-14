@@ -34,7 +34,7 @@ import java.util.HashMap;
 
 
 public class Documents extends MainActivity {
-    private  ListView listView;
+    private  ListView list_View;
     EditText editText;
     ArrayList<String> listItems;
     ArrayAdapter adapter;
@@ -100,7 +100,7 @@ public class Documents extends MainActivity {
         }
 
         //get a listview from xml
-        ListView list_View = (ListView) this.findViewById(R.id.document_listView);
+        list_View = (ListView) this.findViewById(R.id.document_listView);
 
 
         //set to the adapter
