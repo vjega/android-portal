@@ -50,8 +50,6 @@ public class Add_Document extends AppCompatActivity {
         document_spinner.setAdapter(type_adapter);
 
 
-
-
         course_spinner = (Spinner) findViewById(R.id.course_spinner);
         ArrayAdapter<CharSequence> course_adapter = ArrayAdapter.createFromResource(this,
                 R.array.document_course_array, android.R.layout.simple_spinner_item);

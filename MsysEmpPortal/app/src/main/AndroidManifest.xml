@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -26,7 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
@@ -173,8 +171,14 @@
             android:label="Finance Tickets"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Add_Bug" />
-        <activity android:name=".Edit_Bug"
+        <activity
+            android:name=".Edit_Bug"
             android:label="Bug Details" />
+        <activity
+            android:name=".Map"
+            android:label="My Office Route"
+            >
+        </activity>
     </application>
 
 </manifest>

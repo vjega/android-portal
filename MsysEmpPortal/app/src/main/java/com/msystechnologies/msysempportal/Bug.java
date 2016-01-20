@@ -34,10 +34,10 @@ public class Bug extends MainActivity {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.addView(contentView, 0);
 
-        arrayList.add("Bug");
-        arrayList.add("Bug");
-        arrayList.add("Bug");
-        arrayList.add("Bug");
+        arrayList.add("Photo not able to upload");
+        arrayList.add("Mail not send");
+        arrayList.add("Holiday not showing");
+        arrayList.add("Document not saving");
 
 
         ListView list_View = (ListView) this.findViewById(R.id.bug_listView);

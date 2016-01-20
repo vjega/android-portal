@@ -26,9 +26,12 @@ public class Birthday extends MainActivity {
         drawer.addView(contentView, 0);
 
         ListView list_View = (ListView) this.findViewById(R.id.birthday_listView);
-
-        arrayList.add("MUTHUPANDI");
-        arrayList.add("KARTHIK");
+        arrayList.add("TODAY");
+        arrayList.add("Muthupandi");
+        arrayList.add("Karthik");
+        arrayList.add("THIS MONTH");
+        arrayList.add("Deepak");
+        arrayList.add("Suresh");
         adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, arrayList);
         list_View.setAdapter(adapter);

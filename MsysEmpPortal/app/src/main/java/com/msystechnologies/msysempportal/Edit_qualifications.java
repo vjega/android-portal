@@ -7,12 +7,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 /**
  * Created by pravinth on 14/1/16.
  */
+
 public class Edit_qualifications extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,14 +26,23 @@ public class Edit_qualifications extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
+        RelativeLayout relativeLayout =(RelativeLayout)findViewById(R.id.qualifications_form);
+        disable(relativeLayout);
+    }
 
-        RelativeLayout layout = (RelativeLayout) findViewById(R.id.add_qualifications);
+    public void disable(ViewGroup layout) {
+        layout.setEnabled(false);
         for (int i = 0; i < layout.getChildCount(); i++) {
             View child = layout.getChildAt(i);
-            System.out.println("ffff"+child);
-            child.setEnabled(false);
+            if (child instanceof ViewGroup) {
+                disable((ViewGroup) child);
+            } else {
+                child.setEnabled(false);
+            }
         }
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

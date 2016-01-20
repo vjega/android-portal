@@ -219,7 +219,6 @@
     <string name="Browse">Browse</string>
 
 
-
     <string-array name="document_type_array">
         <item>Select Document type</item>
         <item>RESUME</item>
@@ -236,6 +235,7 @@
         <item>FORM 16</item>
     </string-array>
 
+
     <string-array name="document_course_array">
         <item>Select Course type</item>
         <item>Regular</item>
@@ -247,6 +247,30 @@
         <item>Submitted</item>
         <item>Photo copy</item>
         <item>original</item>
+    </string-array>
+
+    <string-array name="qualification_course_array">
+        <item>Select Course type</item>
+        <item>10</item>
+        <item>12</item>
+        <item>Associate Member of Indian Engineers</item>
+        <item>Bachelor of Arts</item>
+        <item>Bachelor of Business Administration</item>
+        <item>Bachelor of Computer Application </item>
+        <item>Bachelor of Commerce</item>
+        <item>Bachelor of Engineering</item>
+        <item>Bachelor of Science</item>
+        <item>Bachelor of Tourism and Hotel Management</item>
+        <item>Cost Acccounts</item>
+        <item>Diploma Electrical Communication Engineering</item>
+        <item>Master of Arts</item>
+        <item>Master of Business Administration</item>
+        <item>Master of Computer Application</item>
+        <item>Master of Disability and Community Studies</item>
+        <item>Master of Pharma</item>
+        <item>Master of Science</item>
+        <item>Master of Technologies</item>
+        <item>Postgraduate Diploma</item>
     </string-array>
 
     <string-array name="bug_type_array">
@@ -270,5 +294,88 @@
     <string name="end_date">End Date</string>
     <string name="days">Days</string>
     <string name="enddate">End Date</string>
+    <string name="name">Name</string>
+    <string name="middle_name">Middle Name</string>
+    <string name="surname">Surname</string>
+    <string name="martial_status">Martial Status</string>
+    <string name="father_name">Father Name</string>
+    <string name="mother_name">Mother Name</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="user_name">User Name</string>
+    <string name="user_host_com">user@host.com</string>
+    <string name="religion">Religion</string>
+    <string name="blood_group">Blood Group</string>
+    <string name="gender">Gender</string>
+    <string name="qualification">Qualification</string>
+    <string name="passing_year">Passing Year</string>
+    <string name="date_of_joining">Date of Joining</string>
+    <string name="designatiion">Desigination</string>
+    <string name="department">Department</string>
+    <string name="manager_name">Manager Name</string>
+    <string name="client_name">Client name</string>
+    <string name="client_name1">Client Name1</string>
+    <string name="msysemail">Msys Email</string>
+    <string name="personalmail">Personal Mail</string>
+    <string name="telno">Tel No</string>
+    <string name="mobile_no">Mobile No</string>
+    <string name="pan">Pan Number</string>
+    <string name="passport_no">Passport No</string>
+    <string name="emergency_name">Emergency Name</string>
+    <string name="emergency_contact_no">Emergency Contact Phone</string>
+    <string name="primary_name">Primary Name</string>
+    <string name="primary_contact_no">Primary Contact Phone</string>
+    <string name="secondary_name">Secondary Name</string>
+    <string name="secondary_contact_number">Secondary Contact Phone</string>
+    <string name="uan_number">UAN Number</string>
+    <string name="pf_number">PF Number</string>
+    <string name="appraisal_month">Appraisal Month</string>
+    <string name="temporary_address">Temporary Address</string>
+    <string name="temporary_city">Temporary City</string>
+    <string name="temporary_state">Temporary State</string>
+    <string name="permanent_address">Permanent Address</string>
+    <string name="permanent_city">Permanent City</string>
+    <string name="permstate">Permanent State</string>
+
+    <string-array name="profile_menu">
+        <item>Basic Info</item>
+        <item>Employee Info</item>
+        <item>Additional Info</item>
+    </string-array>
+
+    <string-array name="profile_maritialstatus">
+        <item>Select Maritial Status</item>
+        <item>Single</item>
+        <item>Married</item>
+    </string-array>
+
+    <string-array name="profile_religion">
+        <item>Select Religion</item>
+        <item>Hindu</item>
+        <item>Christian</item>
+        <item>Muslim</item>
+        <item>Jain</item>
+        <item>Sikhim</item>
+        <item>Buddhism</item>
+    </string-array>
+
+    <string-array name="profile_bloodgroup">
+        <item>Select Blood Group</item>
+        <item>O +ve</item>
+        <item>O -ve</item>
+        <item>A +ve</item>
+        <item>A -ve</item>
+        <item>B +ve</item>
+        <item>B -ve</item>
+        <item>AB +ve</item>
+        <item>AB -ve</item>
+        <item>A1B +ve</item>
+        <item>A1B -ve</item>
+    </string-array>
+
+    <string-array name="profile_gender">
+        <item>Select Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
 
 </resources>

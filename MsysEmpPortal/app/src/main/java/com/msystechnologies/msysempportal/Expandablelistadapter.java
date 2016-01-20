@@ -30,6 +30,10 @@ public class Expandablelistadapter extends BaseExpandableListAdapter {
         this.child = listChildData;
     }
 
+    public Expandablelistadapter() {
+    }
+
+
     @Override
     public int getGroupCount() {
         return this.header.size();

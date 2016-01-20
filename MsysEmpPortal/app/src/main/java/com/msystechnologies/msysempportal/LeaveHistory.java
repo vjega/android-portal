@@ -25,8 +25,8 @@ public class LeaveHistory extends MainActivity {
         drawer.addView(contentView, 0);
 
         ListView list_View = (ListView) this.findViewById(R.id.leave_history_listView);
-        arrayList.add("ML");
-        arrayList.add("CL");
+        arrayList.add("Medical Leave (3)");
+        arrayList.add("Casual Leave (2)");
         adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, arrayList);
         list_View.setAdapter(adapter);

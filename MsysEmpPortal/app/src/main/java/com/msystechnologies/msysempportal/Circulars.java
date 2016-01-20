@@ -31,10 +31,10 @@ public class Circulars extends MainActivity {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.addView(contentView, 0);
 
-        arrayList.add("circular");
-        arrayList.add("circular");
-        arrayList.add("circular");
-        arrayList.add("circular");
+        arrayList.add("Photo shoot at 3PM");
+        arrayList.add("Meeting at 10AM");
+        arrayList.add("Tomorrow Pongal Celebration at 4PM");
+        arrayList.add("Holiday declaration on 24th Dec");
 
 
         ListView list_View = (ListView) this.findViewById(R.id.circulars_listview);

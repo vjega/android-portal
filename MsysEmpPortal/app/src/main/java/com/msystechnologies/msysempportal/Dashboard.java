@@ -48,9 +48,9 @@ public class Dashboard extends MainActivity {
         //get the id of gridview
         CardGridView gridView = (CardGridView) this.findViewById(R.id.cardGridMenu);
 
-        String[] dashboard_items = new String[]{"Uploaded Docs", "Current Projects", "Leave Applied", "Circulars","Birthdays","Holidays"};
+        String[] dashboard_items = new String[]{"My Office", "Projects", "Leave Applied", "Circulars","Birthdays","Holidays"};
 
-        int listImages[] = new int[]{R.drawable.upload,
+        int listImages[] = new int[]{R.drawable.map,
                 R.drawable.project,
                 R.drawable.leave, R.drawable.circular,R.drawable.gift,R.drawable.calendar};
 
@@ -95,7 +95,7 @@ public class Dashboard extends MainActivity {
                     public void onClick(Card card, View view) {
                         switch(position){
                             case 0:
-                                Intent doc_intent = new Intent(Dashboard.this, Documents.class);
+                                Intent doc_intent = new Intent(Dashboard.this, Map.class);
                                 startActivity(doc_intent);
                                 break;
                             case 1:

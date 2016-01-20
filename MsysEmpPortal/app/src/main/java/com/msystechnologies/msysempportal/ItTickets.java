@@ -36,10 +36,10 @@ public class ItTickets extends MainActivity {
         drawer.addView(contentView, 0);
 
 
-        arrayList.add("Ticket");
-        arrayList.add("Ticket");
-        arrayList.add("Ticket");
-        arrayList.add("Ticket");
+        arrayList.add("Mouse not working");
+        arrayList.add("My system not working");
+        arrayList.add("Net not connected");
+        arrayList.add("Keyboard not working");
 
 
         ListView list_View = (ListView) this.findViewById(R.id.it_ticket_listView);

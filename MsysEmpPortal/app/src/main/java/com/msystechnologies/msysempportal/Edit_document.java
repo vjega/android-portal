@@ -66,8 +66,8 @@ public class Edit_document extends AppCompatActivity {
         submit_spinner.setSelection(1);
         submit_spinner.setEnabled(false);
 
-//        browse = (Button)findViewById(R.id.browse);
-//        browse.setEnabled(false);
+        browse = (Button)findViewById(R.id.browse);
+        browse.setEnabled(false);
 
         editText = (EditText)findViewById(R.id.doc_remark_editText);
         editText.setFocusable(false);
@@ -94,9 +94,7 @@ public class Edit_document extends AppCompatActivity {
                 document_spinner.setEnabled(true);
                 course_spinner.setEnabled(true);
                 submit_spinner.setEnabled(true);
-//                browse.setEnabled(true);
-//                editText.F(true);
-
+                browse.setEnabled(true);
                 Toast.makeText(getApplicationContext(), "edit", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.doc_delete:

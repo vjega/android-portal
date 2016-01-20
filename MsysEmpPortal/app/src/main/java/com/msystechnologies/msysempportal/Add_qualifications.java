@@ -6,10 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class Add_qualifications extends AppCompatActivity {
-
+    private  Spinner course_spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,12 @@ public class Add_qualifications extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        course_spinner = (Spinner) findViewById(R.id.course_type);
+        ArrayAdapter<CharSequence> course_adapter = ArrayAdapter.createFromResource(this,
+                R.array.qualification_course_array, android.R.layout.simple_spinner_item);
+        course_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        course_spinner.setAdapter(course_adapter);
     }
 
     @Override

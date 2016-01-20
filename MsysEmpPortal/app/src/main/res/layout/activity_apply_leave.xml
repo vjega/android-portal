@@ -19,7 +19,6 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="setDate"
         android:text="@string/start_date"
         android:layout_marginLeft="17dp"
 
@@ -135,7 +134,7 @@
             android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/remarks"
+            android:text="Description"
             android:layout_marginLeft="32dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             />
