@@ -38,6 +38,7 @@ public class Documents extends MainActivity {
     EditText editText;
     ArrayList<String> listItems;
     ArrayAdapter adapter;
+    ArrayAdapter adapter2;
     String get_doc;
     ArrayList<String> arrayList = new ArrayList<String>();
 
@@ -55,6 +56,8 @@ public class Documents extends MainActivity {
         View contentView = inflater.inflate(R.layout.activity_documents, null, false);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.addView(contentView, 0);
+
+
 
 
 
@@ -82,6 +85,10 @@ public class Documents extends MainActivity {
         jsonArray.put(emp1);
         jsonArray.put(emp2);
 
+        ArrayList<String> arrayList2 = new ArrayList<String>();
+        arrayList2.add("a");
+        arrayList2.add("b");
+
 
 
 
@@ -106,6 +113,7 @@ public class Documents extends MainActivity {
         //set to the adapter
         adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, arrayList);
+
         list_View.setAdapter(adapter);
 
 
