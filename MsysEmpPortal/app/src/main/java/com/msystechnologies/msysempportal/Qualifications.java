@@ -2,61 +2,38 @@ package com.msystechnologies.msysempportal;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.ActionMode;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.RetryPolicy;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import it.gmariotti.cardslib.library.internal.Card;
-import it.gmariotti.cardslib.library.internal.CardArrayMultiChoiceAdapter;
+import it.gmariotti.cardslib.library.internal.CardArrayAdapter;
+import it.gmariotti.cardslib.library.internal.CardExpand;
 import it.gmariotti.cardslib.library.internal.CardHeader;
+import it.gmariotti.cardslib.library.internal.ViewToClickToExpand;
 import it.gmariotti.cardslib.library.view.CardListView;
-import it.gmariotti.cardslib.library.view.CardView;
-
-import static java.lang.System.*;
 
 public class Qualifications extends MainActivity {
 
-    public static final String JSON_URL = "http://www.mocky.io/v2/569669bf1300002440f9e421";
-    private  ListView list_View;
-    private  EditText editText;
-    ArrayAdapter adapter;
-    ArrayList<String> arrayList = new ArrayList<String>();
-    String get_doc;
 
+    String get_doc;
+    MyCard card;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_qualifications);
+        //setContentView(R.layout.activity_qualifications);
 
         // Set Navigation drawyer tool
         LayoutInflater inflater = (LayoutInflater) this
@@ -65,13 +42,56 @@ public class Qualifications extends MainActivity {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.addView(contentView, 0);
 
-        //Valley request
-        sendRequest();
+
+        String[] courseitems = new String[]{"Bachelor of Engineering","Bachelor of Arts"};
+        CardListView cardListView = (CardListView) findViewById(R.id.card_qualification);
+        ArrayList<Card> qualification = new ArrayList<Card>();
+
+        for (int i = 0; i<courseitems.length; i++) {
+
+            //Create a Card
+            card = new MyCard(this);
+            card.setSwipeable(true);
+
+            //Set enable icon visible
+            CardHeader header = new CardHeader(this);
+            card.addCardHeader(header);
+            header.setButtonExpandVisible(true);
 
 
-        //Floating action
-        FloatingActionButton document_fab = (FloatingActionButton) findViewById(R.id.qualifications_fab);
-        document_fab.setOnClickListener(new View.OnClickListener() {
+
+            //Add expand to card
+            CustomExpandCard expand = new CustomExpandCard(getApplicationContext());
+            card.addCardExpand(expand);
+
+            //show the
+            card.Header=courseitems[i];
+
+
+            //Add cards to arraylist
+            qualification.add(card);
+
+        }
+
+        CardArrayAdapter cardArrayAdapter = new CardArrayAdapter(this,qualification);
+        cardListView.setAdapter(cardArrayAdapter);
+
+//        Set enable the expand/collapse action by clicking on a different View
+        ViewToClickToExpand viewToClickToExpand = ViewToClickToExpand.builder().setupView(cardListView);
+        card.setViewToClickToExpand(viewToClickToExpand);
+
+
+        //Add action to setOnSwipeListener
+        card.setOnSwipeListener(new Card.OnSwipeListener() {
+            @Override
+            public void onSwipe(Card card) {
+                Toast.makeText(getBaseContext(),"REMOVED",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //Floating  button action
+        FloatingActionButton documentfab = (FloatingActionButton) findViewById(R.id.qualifications_fab);
+        documentfab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent fab_intent = new Intent(Qualifications.this,Add_qualifications.class);
@@ -81,74 +101,43 @@ public class Qualifications extends MainActivity {
         });
     }
 
-    //use volley to fetch the json string.
-    private void sendRequest(){
-        // Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.GET,JSON_URL,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        showJSON(response);
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.println("####"+error);
+}
 
-                    }
-                });
+//Custumize Expand view
+class CustomExpandCard extends CardExpand {
 
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
-
-        //        stringRequest.setRetryPolicy(new RetryPolicy() {
-        //            @Override
-        //            public int getCurrentTimeout() {
-        //                return 50000;
-        //            }
-        //
-        //            @Override
-        //            public int getCurrentRetryCount() {
-        //                return 50000;
-        //            }
-        //
-        //            @Override
-        //            public void retry(VolleyError error) throws VolleyError {
-        //
-        //            }
-        //        });
+    //Use your resource ID for your inner layout
+    public CustomExpandCard(Context context) {
+        super(context, R.layout.qualification_detailed_view);
     }
 
-    //After getting the JSON we can display it in the ListView.
-    private void showJSON(String json){
-//        ParseJSON pj = new ParseJSON(json);
-//        pj.parseJSON();
+    @Override
+    public void setupInnerViewElements(ViewGroup parent, View view) {
+        parent.setBackgroundColor(Color.WHITE);
+    }
 
-        try {
-            JSONArray get_json_array = new JSONArray(json);
-            for(int i =0;i<get_json_array.length();i++){
-                get_doc = get_json_array.getJSONObject(i).getString("doc_name");
-                arrayList.add(get_doc);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+}
 
+//Custumize card
+class MyCard extends Card{
+    String Header;
 
-        list_View = (ListView) this.findViewById(R.id.qualifications_listView);
-        adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, arrayList);
-        list_View.setAdapter(adapter);
+    public MyCard(Context context){
+        super(context, R.layout.qualification_card_innner_view);
+    }
 
-        //Onclick listener for listview
-        list_View.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    @Override
+    public void setupInnerViewElements(ViewGroup parent, View view) {
+
+        TextView header= (TextView)view.findViewById(R.id.header);
+        header.setText(Header);
+
+        TextView edittxt= (TextView)view.findViewById(R.id.edit);
+        edittxt.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                Intent edit_doc = new Intent(Qualifications.this,Edit_qualifications.class);
-                startActivity(edit_doc);
-
+            public void onClick(View v) {
+                Intent intent =new Intent(getContext(),Edit_qualifications.class);
+                mContext.startActivity(intent);
             }
         });
     }

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/qualifications_form"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
@@ -11,150 +10,152 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.msystechnologies.msysempportal.Add_qualifications">
 
-    <ScrollView
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:id="@+id/detail_qualifications_form"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        >
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent">
 
-            android:orientation="vertical">
-
-            <android.support.design.widget.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
 
-                <!--<EditText-->
-                <!--android:id="@+id/course_type"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:hint="@string/prompt_course_type"-->
-                <!--android:maxLines="1"-->
-                <!--android:singleLine="true" />-->
-                <Spinner
-                    android:id="@+id/course_type"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_email"
-                    android:padding="15dp" />
+                    android:layout_marginTop="20dp"
+                    >
 
-            </android.support.design.widget.TextInputLayout>
+                    <Spinner
+                        android:id="@+id/course_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/board_name"
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_board_name"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:layout_marginTop="16dp">
 
-            </android.support.design.widget.TextInputLayout>
+                    <EditText
+                        android:id="@+id/board_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_board_name"
+                     />
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                </android.support.design.widget.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/course_name"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_course_name"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:layout_marginTop="16dp">
 
-            </android.support.design.widget.TextInputLayout>
+                    <EditText
+                        android:id="@+id/course_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_course_name"
+                        />
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                </android.support.design.widget.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/passing_year"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_qual_passing_year"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:layout_marginTop="16dp">
 
-            </android.support.design.widget.TextInputLayout>
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/passing_year"
+                        android:drawablePadding="15dp"
+                        android:hint="@string/prompt_qual_passing_year"
+                        android:focusable="false"
+                        android:singleLine="true"
+                        android:drawableLeft="@drawable/ic_date"
+                        android:onClick="setDate"/>
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                </android.support.design.widget.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/grade"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_grade"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:layout_marginTop="16dp">
 
-            </android.support.design.widget.TextInputLayout>
+                    <EditText
+                        android:id="@+id/grade"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_grade"
+                        />
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                </android.support.design.widget.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/total_mark"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_total_mark"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:layout_marginTop="16dp">
 
-            </android.support.design.widget.TextInputLayout>
+                    <EditText
+                        android:id="@+id/total_mark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_total_mark"
+                         />
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                </android.support.design.widget.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/earned_mark"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_earned_mark"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:layout_marginTop="16dp">
 
-            </android.support.design.widget.TextInputLayout>
+                    <EditText
+                        android:id="@+id/earned_mark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_earned_mark"
+                     />
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                </android.support.design.widget.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/percentage"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_percentage"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:layout_marginTop="16dp">
 
-            </android.support.design.widget.TextInputLayout>
+                    <EditText
+                        android:id="@+id/percentage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_percentage"
+                       />
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                </android.support.design.widget.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/remarks"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_qual_passing_year"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:layout_marginTop="16dp">
 
-            </android.support.design.widget.TextInputLayout>
+                    <EditText
+                        android:id="@+id/remarks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/remarks"
+                       />
 
-        </LinearLayout>
-    </ScrollView>
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
 
 </RelativeLayout>

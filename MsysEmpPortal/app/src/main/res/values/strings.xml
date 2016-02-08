@@ -148,7 +148,6 @@
     <!--Groups with schild items-->
     <string-array name="Home_sub">
         <item>Profile</item>
-        <item>Documents</item>
         <item>Qualifications</item>
         <item>Family Details</item>
         <item>Experience</item>
@@ -285,8 +284,10 @@
     </string-array>
     <string-array name="apply_leave">
         <item>Leave types</item>
-        <item>Edit</item>
-        <item>Delete</item>
+        <item>Casual Leave</item>
+        <item>Marriage Leave</item>
+        <item>Maternity Leave</item>
+        <item>Paternity Leave</item>
     </string-array>
 
     <string name="title_activity_add__bug">Add New</string>

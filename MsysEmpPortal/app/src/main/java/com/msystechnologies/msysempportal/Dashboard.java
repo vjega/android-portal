@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -32,6 +33,8 @@ import it.gmariotti.cardslib.library.view.CardView;
 
 public class Dashboard extends MainActivity {
     private Context context;
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,7 +71,6 @@ public class Dashboard extends MainActivity {
             CardThumbnail thumb = new CardThumbnail(this);
             thumb.setDrawableResource(listImages[i]);
             card.addCardThumbnail(thumb);
-
             cards.add(card);
         }
 
