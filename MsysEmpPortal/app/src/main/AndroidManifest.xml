@@ -52,10 +52,6 @@
             android:label="Settings"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Documents"
-            android:label="Documents"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".Qualifications"
             android:label="Qualifications"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -150,9 +146,6 @@
             android:name=".Holiday"
             android:label="Holiday"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Add_Document"
-            android:label="Document Details" />
         <activity android:name=".Add_qualifications" />
         <activity android:name=".Add_Experience" />
         <activity android:name=".Add_Family" />
@@ -160,9 +153,6 @@
         <activity android:name=".Add_Visa" />
         <activity android:name=".Add_Resource" />
         <activity android:name=".Add_Skillset" />
-        <activity
-            android:name=".Edit_document"
-            android:label="Document Details" />
         <activity
             android:name=".Edit_qualifications"
             android:label="Document Details" />

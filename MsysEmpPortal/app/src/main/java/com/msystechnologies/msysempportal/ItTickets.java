@@ -53,8 +53,7 @@ public class ItTickets extends MainActivity {
         document_fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent fab_intent = new Intent(ItTickets.this,Add_Document.class);
-                startActivity(fab_intent);
+
 
             }
         });

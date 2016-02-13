@@ -11,15 +11,22 @@
     tools:context="com.msystechnologies.msysempportal.Qualifications">
 
 
-    <ListView
-        android:id="@+id/qualifications_listView"
+    <!--<ListView-->
+        <!--android:id="@+id/qualifications_listView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_marginTop="58dp"-->
+        <!--/>-->
+    <it.gmariotti.cardslib.library.view.CardListView
+        android:id="@+id/card_qualification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="58dp"
-        android:background="#0066cc"/>
+        android:layout_marginTop="64dp"
+        card:list_card_layout_resourceID="@layout/native_list_card_thumbnail_layout"
+        />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/qualifications_fab"
@@ -29,8 +36,10 @@
         android:tint="@android:color/white"
         android:src="@android:drawable/ic_menu_add"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/qualifications_listView"
-        android:layout_alignEnd="@+id/qualifications_listView" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="45dp"
+        android:layout_marginEnd="5dp"/>
 
 </RelativeLayout>
 

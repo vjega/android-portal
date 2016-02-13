@@ -8,8 +8,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 /**
@@ -19,6 +21,7 @@ import android.widget.Toast;
 public class Edit_qualifications extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Spinner course_spinner;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_qualifications);
         setTitle("Qualification Details");
@@ -26,28 +29,20 @@ public class Edit_qualifications extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
-        RelativeLayout relativeLayout =(RelativeLayout)findViewById(R.id.qualifications_form);
-        disable(relativeLayout);
-    }
 
-    public void disable(ViewGroup layout) {
-        layout.setEnabled(false);
-        for (int i = 0; i < layout.getChildCount(); i++) {
-            View child = layout.getChildAt(i);
-            if (child instanceof ViewGroup) {
-                disable((ViewGroup) child);
-            } else {
-                child.setEnabled(false);
-            }
-        }
-    }
+        course_spinner = (Spinner) findViewById(R.id.course_type);
+        ArrayAdapter<CharSequence> course_adapter = ArrayAdapter.createFromResource(this,
+                R.array.qualification_course_array, android.R.layout.simple_spinner_item);
+        course_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        course_spinner.setAdapter(course_adapter);
 
+    }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main_edit_document, menu);
+        getMenuInflater().inflate(R.menu.main_save, menu);
         return true;
     }
 
@@ -59,15 +54,12 @@ public class Edit_qualifications extends AppCompatActivity {
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
         switch (id) {
-            case R.id.doc_edit:
-                item.setIcon(R.drawable.ic_done_white_18dp);
-                Toast.makeText(getApplicationContext(), "edit", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.doc_delete:
-                Toast.makeText(getApplicationContext(), "deleted", Toast.LENGTH_SHORT).show();
-                break;
             case R.id.doc_done:
                 Toast.makeText(getApplicationContext(), "saved", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.doc_delete:
+                Toast.makeText(getApplicationContext(), "deleted", Toast.LENGTH_SHORT).show();
                 break;
 
             case android.R.id.home:

@@ -59,7 +59,7 @@ public class Edit_Bug extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         switch (id) {
             case R.id.doc_edit:
-                item.setIcon(R.drawable.ic_done_white_18dp);
+                item.setIcon(R.drawable.ic_done_white_24dp);
                 bug_type_spinner.setEnabled(true);
 //                editText.F(true);
                 Toast.makeText(getApplicationContext(), "edit", Toast.LENGTH_SHORT).show();

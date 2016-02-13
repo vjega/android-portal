@@ -3,6 +3,7 @@ package com.msystechnologies.msysempportal;
 import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -40,15 +41,22 @@ public class Profile extends MainActivity {
         drawer.addView(contentView, 0);
 
 
-
-
         Profile_expandable listAdapter = new Profile_expandable(this,getLayoutInflater());
 
 
          /*Get the Expandable listview*/
-        expandableListView = (ExpandableListView)findViewById(R.id.profile_expand);
-        expandableListView.setAdapter(listAdapter);
-        expandableListView.setDescendantFocusability(ViewGroup.FOCUS_AFTER_DESCENDANTS);
+//        expandableListView = (ExpandableListView)findViewById(R.id.profile_expand);
+//        expandableListView.setAdapter(listAdapter);
+//        expandableListView.setDescendantFocusability(ViewGroup.FOCUS_AFTER_DESCENDANTS);
+
+        // Get the ViewPager and set it's PagerAdapter so that it can display items
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager.setAdapter(new SampleFragmentPagerAdapter(getSupportFragmentManager(), Profile.this));
+
+
+        // Give the TabLayout the ViewPager
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
+        tabLayout.setupWithViewPager(viewPager);
 
 
     }

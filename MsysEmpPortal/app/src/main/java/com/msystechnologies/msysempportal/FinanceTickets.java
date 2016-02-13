@@ -51,8 +51,8 @@ public class FinanceTickets extends MainActivity {
         document_fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent fab_intent = new Intent(FinanceTickets.this,Add_Document.class);
-                startActivity(fab_intent);
+//                Intent fab_intent = new Intent(FinanceTickets.this,Add_Document.class);
+//                startActivity(fab_intent);
 
             }
         });

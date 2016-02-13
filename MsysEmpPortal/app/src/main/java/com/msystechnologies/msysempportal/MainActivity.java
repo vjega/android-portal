@@ -159,37 +159,33 @@ public class MainActivity extends AppCompatActivity {
                         case 0:
                             Intent home_intent = new Intent(MainActivity.this, Profile.class);
                             startActivity(home_intent);
+                            break;
 
-                            break;
                         case 1:
-                            Intent doc_intent = new Intent(MainActivity.this, Documents.class);
-                            startActivity(doc_intent);
-                            break;
-                        case 2:
                             Intent qualify_intent = new Intent(MainActivity.this, Qualifications.class);
                             startActivity(qualify_intent);
                             break;
-                        case 3:
+                        case 2:
                             Intent family_intent = new Intent(MainActivity.this, Family.class);
                             startActivity(family_intent);
                             break;
-                        case 4:
+                        case 3:
                             Intent exp_intent = new Intent(MainActivity.this, Experience.class);
                             startActivity(exp_intent);
                             break;
-                        case 5:
+                        case 4:
                             Intent visa_intent = new Intent(MainActivity.this, Visa.class);
                             startActivity(visa_intent);
                             break;
-                        case 6:
+                        case 5:
                             Intent projects_intent = new Intent(MainActivity.this, Projects.class);
                             startActivity(projects_intent);
                             break;
-                        case 7:
+                        case 6:
                             Intent team_intent = new Intent(MainActivity.this, Team.class);
                             startActivity(team_intent);
                             break;
-                        case 8:
+                        case 7:
                             Intent skill_intent = new Intent(MainActivity.this, Skillset.class);
                             startActivity(skill_intent);
                             break;
